@@ -24,7 +24,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-## **<b style='color:yellow'>Welcome to ChatGPT Desktop!</b>**
+## **<b style='color:#D1A94A'>Welcome to ChatGPT Desktop!</b>**
 
 - **This software package brings the power of OpenAI's ChatGPT right to your desktop, allowing you to have interactive and dynamic conversations with a cutting-edge AI language model. Whether you're looking for assistance, brainstorming ideas, or simply want to engage in natural language conversations, ChatGPT Desktop has got you covered.**
 
@@ -50,7 +50,7 @@
 ### <p style="color:white">Privacy and Security: </p>
 - Your conversations stay on your local machine, enhancing data privacy and security. Unlike cloud-based solutions, your sensitive information remains under your control.
 
-# <b style="color:yellow">Getting Started</b>
+# <b style="color:#D1A94A">Getting Started</b>
 **<b style="color:yellow">Installation: &nbsp;</b>** Follow the installation guide to set up ChatGPT Desktop on your machine. You'll find step-by-step instructions for various operating systems.
 
 **<b style="color:yellow">Running the Application: &nbsp;</b>** Launch the ChatGPT Desktop application after installation. The user-friendly interface will allow you to start conversations immediately.
@@ -61,13 +61,13 @@
 
 **<b style="color:yellow">Advanced Features: &nbsp;</b>** Dive into the advanced settings to further customize the AI's behavior, adjust response length, and explore other features that enhance your experience.
 
-# Feedback and Support
+# <b style="color:#D1A94A">Feedback and Support</b>
 We value your feedback! If you encounter any issues, have suggestions for improvement, or want to share your experience, please reach out to our support team at support@chatgptdesktop.com(currently not operational, **LOL 😂**). You can also join our community forums to connect with other users, share tips, and learn about the latest updates.
 
 ### Licensing
 - ChatGPT Desktop is available under the OpenAI License, giving you the freedom to use, modify, and distribute the software in compliance with the terms outlined.
 
 ### Stay Updated
-- For the latest news, updates, and tips, visit our website www.chatgptdesktop.com and subscribe to our newsletter.
+- For the latest news, updates, and tips, visit our website https://hashnode.com/@Jamesshisia and subscribe to our newsletter.
 
 Get ready for an exceptional conversational experience with ChatGPT Desktop. Install now and unlock the power of AI-driven conversations right at your fingertips!
