@@ -8,5 +8,7 @@ module chat.gpt.chatgpt_desktop {
     requires org.kordamp.bootstrapfx.core;
 
     opens chat.gpt.chatgpt_desktop to javafx.fxml;
+    exports chat.gpt.chatgpt_desktop.Controller to javafx.fxml;
+    opens chat.gpt.chatgpt_desktop.Controller to javafx.fxml;
     exports chat.gpt.chatgpt_desktop;
 }

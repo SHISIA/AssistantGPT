@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="952.0" style="-fx-background-color: #17181C;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="952.0" style="-fx-background-color: #17181C;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chat.gpt.chatgpt_desktop.Controller.IntroController">
    <children>
       <HBox alignment="CENTER" layoutX="146.0" layoutY="39.0">
          <children>
@@ -19,7 +19,7 @@
                   <Circle fill="#1f93ff02" layoutX="48.0" layoutY="47.0" radius="45.0" stroke="#d1a94a" strokeType="INSIDE" />
                   <ImageView fitHeight="94.0" fitWidth="96.0">
                      <image>
-                        <Image url="@icons/logo.png" />
+                        <Image url="@../icons/logo.png" />
                      </image>
                   </ImageView>
                </children>
@@ -33,17 +33,17 @@
       </HBox>
       <ImageView fitHeight="55.0" fitWidth="58.0" layoutX="169.0" layoutY="202.0">
          <image>
-            <Image url="@icons/money.png" />
+            <Image url="@../icons/money.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="61.0" fitWidth="58.0" layoutX="418.0" layoutY="199.0">
          <image>
-            <Image url="@icons/lock.png" />
+            <Image url="@../icons/lock.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="61.0" fitWidth="58.0" layoutX="666.0" layoutY="199.0">
          <image>
-            <Image url="@icons/experience.png" />
+            <Image url="@../icons/experience.png" />
          </image>
       </ImageView>
       <Label layoutX="147.0" layoutY="260.0" prefHeight="43.0" prefWidth="225.0" text="Free and Open Source" textFill="#d1a94a">
@@ -76,14 +76,14 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <JFXButton layoutX="149.0" layoutY="407.0" prefHeight="43.0" prefWidth="248.0" style="-fx-background-color: #D1A94A;" text="Enter OpenAI Key" textFill="#120d00">
+      <JFXButton layoutX="149.0" layoutY="407.0" onAction="#openFeaturesWindow" prefHeight="43.0" prefWidth="248.0" style="-fx-background-color: #D1A94A;" text="Enter OpenAI Key" textFill="#120d00">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
       <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="889.0" layoutY="543.0">
          <image>
-            <Image url="@icons/info.png" />
+            <Image url="@../icons/info.png" />
          </image>
       </ImageView>
    </children>
