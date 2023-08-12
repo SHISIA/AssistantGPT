@@ -76,7 +76,7 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <JFXButton layoutX="149.0" layoutY="407.0" onAction="#openFeaturesWindow" prefHeight="43.0" prefWidth="248.0" style="-fx-background-color: #D1A94A;" text="Enter OpenAI Key" textFill="#120d00">
+      <JFXButton fx:id="enterAPIKeyBtn" layoutX="149.0" layoutY="445.0" onAction="#openFeaturesWindow" prefHeight="43.0" prefWidth="248.0" style="-fx-background-color: #D1A94A;" text="Enter OpenAI Key" textFill="#120d00">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

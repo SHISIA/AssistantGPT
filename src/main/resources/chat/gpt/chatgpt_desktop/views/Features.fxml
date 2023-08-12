@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="952.0" style="-fx-background-color: #17181C;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="972.0" style="-fx-background-color: #17181C;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chat.gpt.chatgpt_desktop.Controller.FeaturesController">
    <children>
       <HBox alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="31.0" prefWidth="161.0">
          <children>
@@ -26,54 +26,54 @@
             </Label>
          </children>
       </HBox>
-      <Pane layoutX="168.0" layoutY="219.0">
+      <Pane layoutX="141.0" layoutY="219.0" prefHeight="136.0" prefWidth="216.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 14;">
          <children>
-            <Label prefHeight="43.0" prefWidth="102.0" text="ChatGPT" textFill="#d1a94a">
+            <Label layoutX="57.0" layoutY="2.0" prefHeight="43.0" prefWidth="102.0" text="ChatGPT" textFill="#f4f3f1">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="2.0" layoutY="28.0" prefHeight="73.0" prefWidth="199.0" text="The text/chatting part alone. This features interactive chats, replies from ChatGPT and prompt saving" textFill="#f4f4f4" wrapText="true">
+            <Label layoutX="20.0" layoutY="29.0" prefHeight="92.0" prefWidth="184.0" text="The text/chatting part alone. This features interactive chats, replies from ChatGPT and prompt saving" textFill="#8b8b8b" wrapText="true">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="397.0" layoutY="221.0">
+      <Pane layoutX="382.0" layoutY="221.0" prefHeight="133.0" prefWidth="209.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 14;">
          <children>
-            <Label prefHeight="43.0" prefWidth="184.0" text="Image Generation" textFill="#d1a94a">
+            <Label layoutX="12.0" layoutY="-1.0" prefHeight="43.0" prefWidth="184.0" text="Image Generation" textFill="#f4f3f0">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutY="34.0" prefHeight="81.0" prefWidth="184.0" text="This feature entails image generation in such a way that the prompts are converted to images,3 per prompt" textFill="#f4f4f4" wrapText="true">
+            <Label layoutX="19.0" layoutY="34.0" prefHeight="81.0" prefWidth="173.0" text="This feature entails image generation in such a way that the prompts are converted to images,3 per prompt" textFill="#8b8b8b" wrapText="true">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="616.0" layoutY="219.0">
+      <Pane layoutX="608.0" layoutY="219.0" prefHeight="133.0" prefWidth="233.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 14;">
          <children>
-            <Label prefHeight="43.0" prefWidth="161.0" text="All Features" textFill="#d1a94a">
+            <Label layoutX="54.0" layoutY="-2.0" prefHeight="43.0" prefWidth="161.0" text="All Features" textFill="#f6f6f6">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutY="21.0" prefHeight="105.0" prefWidth="225.0" text="This basically enables you to use both the image generator and the chat abilities of the software. It enables all the aforementioned features." textFill="#f4f4f4" wrapText="true">
+            <Label layoutX="20.0" layoutY="28.0" prefHeight="99.0" prefWidth="209.0" text="This basically enables you to use both the image generator and the chat abilities of the software. It enables all the features." textFill="#8b8b8b" wrapText="true">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <JFXButton fx:id="backButton" layoutX="274.0" layoutY="480.0" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: #D1A94A;" text="Back" textFill="#fdfdfd">
+      <JFXButton fx:id="backButton" layoutX="295.0" layoutY="479.0" onAction="#goBackToIntroWindow" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: #D1A94A;" text="Back" textFill="#fdfdfd">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <ImageView fx:id="infoBtn" fitHeight="31.0" fitWidth="31.0" layoutX="889.0" layoutY="543.0">
+      <ImageView fx:id="infoBtn" fitHeight="31.0" fitWidth="31.0" layoutX="915.0" layoutY="535.0">
          <image>
             <Image url="@../icons/info.png" />
          </image>
@@ -83,22 +83,22 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <JFXButton fx:id="continueButton" layoutX="495.0" layoutY="480.0" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: #D1A94A;" text="Continue" textFill="#fbfbfb">
+      <JFXButton fx:id="continueButton" layoutX="516.0" layoutY="479.0" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: #D1A94A;" text="Continue" textFill="#fbfbfb">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXCheckBox fx:id="chatgptCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" layoutX="249.0" layoutY="345.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="70.0" selected="true" text="CheckBox" textFill="TRANSPARENT" wrapText="true">
+      <JFXCheckBox fx:id="chatgptCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" layoutX="239.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="70.0" selected="true" text="CheckBox" textFill="TRANSPARENT" wrapText="true">
          <font>
             <Font size="25.0" />
          </font>
       </JFXCheckBox>
-      <JFXCheckBox fx:id="imgGenCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" layoutX="460.0" layoutY="345.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="70.0" textFill="TRANSPARENT" wrapText="true">
+      <JFXCheckBox fx:id="imgGenCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" layoutX="454.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="70.0" text="CheckBox" textFill="TRANSPARENT" wrapText="true">
          <font>
             <Font size="25.0" />
          </font>
       </JFXCheckBox>
-      <JFXCheckBox fx:id="allFeatureCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" layoutX="672.0" layoutY="345.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="70.0" textFill="TRANSPARENT" wrapText="true">
+      <JFXCheckBox fx:id="allFeatureCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" layoutX="671.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="70.0" textFill="TRANSPARENT" wrapText="true">
          <font>
             <Font size="25.0" />
          </font>
