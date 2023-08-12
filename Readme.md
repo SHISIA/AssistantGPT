@@ -1,6 +1,17 @@
 # <b style="color:#D1A94A">ChatGPT Desktop</b>
 #### Code, Research, Query, Debug... and find out with A.I
+<div>
 
+![N|Solid](/Intro.png)
+
+</div>
+
+<div style="display:flex;justify-content:center;align-items:center;border:1px solid grey;padding:0 ">
+
+![N|Solid](/Figma%20Design%20Concept.png)
+
+</div>
+<p style="color:#5ECACB">Sample AI Generated Art</p>
 <div style="display:flex;justify-content:center;align-items:center;border:1px solid grey;padding:0 ">
 
 ![N|Solid](/src/main/resources/chat/gpt/chatgpt_desktop/mn.jpg)
