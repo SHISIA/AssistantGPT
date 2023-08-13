@@ -28,4 +28,12 @@ public class FeaturesController {
         stage.close();
         WindowLoader.loadWindowFromPassedFxmlPath("Intro");
     }
+
+    //continue to the Home window
+    public void continueToHomeWindow() {
+        //close the current window and go back to Intro
+        Stage stage=(Stage) backButton.getScene().getWindow();
+        stage.close();
+        WindowLoader.loadWindowFromPassedFxmlPath("Home");
+    }
 }

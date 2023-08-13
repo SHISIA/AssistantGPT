@@ -83,7 +83,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <JFXButton fx:id="continueButton" layoutX="516.0" layoutY="479.0" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: #D1A94A;" text="Continue" textFill="#fbfbfb">
+      <JFXButton fx:id="continueButton" layoutX="516.0" layoutY="479.0" onAction="#continueToHomeWindow" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: #D1A94A;" text="Continue" textFill="#fbfbfb">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

@@ -1,7 +1,9 @@
 package chat.gpt.chatgpt_desktop.view;
 
+import chat.gpt.chatgpt_desktop.HelloApplication;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,7 +16,8 @@ public class WindowLoader {
             loader.setLocation(WindowLoader.class.getResource("/chat/gpt/chatgpt_desktop/views/"+path+".fxml"));
             Scene scene = new Scene(loader.load());
             Stage stage = new Stage();
-            stage.setTitle("Features Window");
+            stage.getIcons().add(new Image(String.valueOf(WindowLoader.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
+            stage.setTitle("ChatGPT Desktop");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
