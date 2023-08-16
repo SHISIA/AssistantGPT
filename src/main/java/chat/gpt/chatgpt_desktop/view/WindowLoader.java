@@ -1,15 +1,12 @@
 package chat.gpt.chatgpt_desktop.view;
 
-import chat.gpt.chatgpt_desktop.HelloApplication;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
 public class WindowLoader {
-
     public static void loadWindowFromPassedFxmlPath(String path){
         try {
             FXMLLoader loader = new FXMLLoader();

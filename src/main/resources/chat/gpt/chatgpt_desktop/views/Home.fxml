@@ -4,7 +4,6 @@
 <?import com.jfoenix.controls.JFXListView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,10 +11,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
 <BorderPane style="-fx-background-color: #17181C;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chat.gpt.chatgpt_desktop.Controller.HomeController">
    <left>
-      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="300.0" style="-fx-background-color: #17181C;" BorderPane.alignment="CENTER">
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="235.0" style="-fx-background-color: #17181C;" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="31.0" prefWidth="161.0">
                <children>
@@ -31,7 +31,7 @@
                   </Label>
                </children>
             </HBox>
-            <VBox layoutX="1.0" layoutY="46.0" prefHeight="563.0" prefWidth="297.0">
+            <VBox layoutX="1.0" layoutY="46.0" prefHeight="563.0" prefWidth="221.0">
                <children>
                   <HBox>
                      <children>
@@ -47,7 +47,7 @@
                         </JFXButton>
                      </children>
                   </HBox>
-                  <JFXListView fx:id="promptsList" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                  <JFXListView fx:id="promptsList" prefHeight="493.0" prefWidth="277.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </VBox.margin>
@@ -58,33 +58,23 @@
       </AnchorPane>
    </left>
    <center>
-      <VBox prefHeight="611.0" prefWidth="768.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="599.0" prefWidth="768.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane fx:id="replyField" minHeight="0.0" minWidth="0.0" prefHeight="506.0" prefWidth="305.0" style="-fx-border-color: white; -fx-background-color: #1A1A1A; -fx-background-radius: 22; -fx-border-radius: 22;" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0" VBox.vgrow="ALWAYS">
+            <AnchorPane fx:id="replyField" minHeight="0.0" minWidth="0.0" prefHeight="520.0" prefWidth="708.0" style="-fx-border-color: white; -fx-background-color: #1A1A1A;" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox>
+                  <WebView fx:id="webView" layoutX="49.0" layoutY="104.0" prefHeight="456.6666666666667" prefWidth="708.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children></AnchorPane>
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="708.0" spacing="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox HBox.hgrow="ALWAYS">
                      <children>
-                        <TextField fx:id="chatField" alignment="CENTER" prefHeight="46.0" prefWidth="337.0" promptText="Type Here" style="-fx-background-color: transparent; -fx-border-color: grey; -fx-border-radius: 22;">
+                        <JFXButton fx:id="askBtn" onAction="#goBack" prefHeight="52.0" prefWidth="101.0" text="Back" textFill="#d1a94a">
                            <font>
-                              <Font size="20.0" />
-                           </font>
-                        </TextField>
-                        <JFXButton fx:id="askBtn" prefHeight="52.0" prefWidth="101.0" text="Ask" textFill="#d1a94a">
-                           <font>
-                              <Font size="23.0" />
+                              <Font size="15.0" />
                            </font>
                         </JFXButton>
                      </children>
                   </HBox>
-                  <ImageView fx:id="infoBtn" fitHeight="41.0" fitWidth="41.0" HBox.hgrow="ALWAYS">
-                     <image>
-                        <Image url="@../icons/info.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="40.0" />
-                     </HBox.margin>
-                  </ImageView>
                </children>
                <VBox.margin>
                   <Insets />
@@ -95,7 +85,7 @@
             </HBox>
          </children>
          <padding>
-            <Insets bottom="30.0" left="30.0" right="30.0" top="50.0" />
+            <Insets bottom="10.0" left="30.0" right="30.0" top="40.0" />
          </padding>
       </VBox>
    </center>
