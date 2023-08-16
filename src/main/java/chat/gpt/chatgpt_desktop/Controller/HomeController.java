@@ -41,10 +41,16 @@ public class HomeController implements Initializable {
         cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
         CookieHandler.setDefault(cookieManager);
 
+//        String script = "var ads = document.querySelectorAll('.ad-class-name'); " +
+//                "ads.forEach(ad => ad.style.display = 'none');";
+//        webEngine.executeScript(script);
+
+
         // Set the user agent to mimic Firefox
         String edgeUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36 Edg/100.0.0.0";
         webEngine.setUserAgent(edgeUserAgent);
-        webEngine.load("https://www.bing.com/new");
+        webEngine.load("https://deepai.org/chat");
+//        webEngine.load("https://www.bing.com/new");
 //        webEngine.load("https://www.bing.com/search?q=Bing+AI&showconv=1");
     }
 
