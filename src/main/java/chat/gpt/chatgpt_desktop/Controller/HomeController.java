@@ -3,12 +3,14 @@ package chat.gpt.chatgpt_desktop.Controller;
 import chat.gpt.chatgpt_desktop.view.WindowLoader;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import javafx.concurrent.Worker;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Label;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import org.w3c.dom.Document;
 
 import java.net.CookieHandler;
 import java.net.CookieManager;
@@ -24,6 +26,8 @@ public class HomeController implements Initializable {
     public JFXListView promptsList;
     @FXML
     public WebView webView;
+    @FXML
+    public Label waitText;
 
     //open the Intro window
     public void goToHomeImageIfEnabled() {
@@ -40,23 +44,26 @@ public class HomeController implements Initializable {
         CookieManager cookieManager = new CookieManager();
         cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
         CookieHandler.setDefault(cookieManager);
+        webEngine.setUserStyleSheetLocation(getClass().getResource("/chat/gpt/chatgpt_desktop/css/webView.css").toString());
 
-//        String script = "var ads = document.querySelectorAll('.ad-class-name'); " +
-//                "ads.forEach(ad => ad.style.display = 'none');";
-//        webEngine.executeScript(script);
 
 
         // Set the user agent to mimic Firefox
         String edgeUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36 Edg/100.0.0.0";
         webEngine.setUserAgent(edgeUserAgent);
+        webEngine.getLoadWorker().stateProperty().addListener(
+                (ov, oldState, newState) -> {
+                    if (newState == Worker.State.SUCCEEDED) {
+                        waitText.setVisible(false);
+                    }
+                });
         webEngine.load("https://deepai.org/chat");
-//        webEngine.load("https://www.bing.com/new");
-//        webEngine.load("https://www.bing.com/search?q=Bing+AI&showconv=1");
+
     }
 
-    public void goBack() {
-        if (webView.getEngine().getHistory().getCurrentIndex() > 0) {
-            webView.getEngine().getHistory().go(-1);
-        }
-    }
+//    public void goBack() {
+//        if (webView.getEngine().getHistory().getCurrentIndex() > 0) {
+//            webView.getEngine().getHistory().go(-1);
+//        }
+//    }
 }
