@@ -1,6 +1,5 @@
 package chat.gpt.chatgpt_desktop;
 
-import chat.gpt.chatgpt_desktop.view.WindowLoader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

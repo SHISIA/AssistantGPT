@@ -84,6 +84,12 @@
             <artifactId>log4j-api</artifactId>
             <version>2.20.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.swt.win32.win32.x86_64 -->
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>org.eclipse.swt.win32.win32.x86_64</artifactId>
+            <version>3.124.0</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -102,13 +108,22 @@
             <version>2.0.7</version>
         </dependency>
         <dependency>
+            <groupId>org.eclipse.swt.wpf.win32</groupId>
+            <artifactId>x86</artifactId>
+            <version>3.3.0-v3346</version>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
+
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
             <version>2.0.7</version>
         </dependency>
-        <!-- Thanks for using https://jar-download.com -->
-
-
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
+            <version>17.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>
