@@ -21,7 +21,7 @@ public class PromptWindowLoader {
             scene.setFill(Color.TRANSPARENT);
             Stage stage = new Stage();
             stage.getIcons().add(new Image(String.valueOf(WindowLoader.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
-            stage.setTitle("ChatGPT Desktop");
+            stage.setTitle("AssistantGPT ");
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.setScene(scene);

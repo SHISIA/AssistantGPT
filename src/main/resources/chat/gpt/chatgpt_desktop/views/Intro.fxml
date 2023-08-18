@@ -24,7 +24,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Label prefHeight="73.0" prefWidth="341.0" text="ChatGPT Desktop" textFill="#d1a94a">
+            <Label prefHeight="73.0" prefWidth="341.0" text="AssistantGPT" textFill="#d1a94a">
                <font>
                   <Font name="System Bold" size="35.0" />
                </font>
@@ -51,7 +51,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="403.0" layoutY="261.0" prefHeight="43.0" prefWidth="225.0" text="Free and Open Source" textFill="#d1a94a">
+      <Label layoutX="403.0" layoutY="261.0" prefHeight="43.0" prefWidth="225.0" text="Security" textFill="#d1a94a">
          <font>
             <Font size="22.0" />
          </font>
@@ -66,7 +66,7 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="403.0" layoutY="295.0" prefHeight="61.0" prefWidth="184.0" text="The details used here stay here. Nothing is shared with the developer. " textFill="#f4f4f4" wrapText="true">
+      <Label layoutX="403.0" layoutY="295.0" prefHeight="82.0" prefWidth="184.0" text="The details used here stay here. Nothing is shared with the developer. Actualy,we dont need any" textFill="#f4f4f4" wrapText="true">
          <font>
             <Font size="13.0" />
          </font>
@@ -76,12 +76,12 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <JFXButton fx:id="enterAPIKeyBtn" layoutX="149.0" layoutY="445.0" onAction="#openFeaturesWindow" prefHeight="43.0" prefWidth="248.0" style="-fx-background-color: #D1A94A;" text="Enter OpenAI Key" textFill="#120d00">
+      <JFXButton fx:id="enterAPIKeyBtn" layoutX="371.0" layoutY="456.0" onAction="#openFeaturesWindow" prefHeight="43.0" prefWidth="248.0" style="-fx-background-color: #D1A94A;" text="Continue" textFill="#120d00">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="889.0" layoutY="543.0">
+      <ImageView fx:id="popInfo" fitHeight="31.0" fitWidth="31.0" layoutX="889.0" layoutY="543.0">
          <image>
             <Image url="@../icons/info.png" />
          </image>

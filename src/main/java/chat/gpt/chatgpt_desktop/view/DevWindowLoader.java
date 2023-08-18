@@ -19,7 +19,7 @@ import java.io.IOException;
 public class DevWindowLoader {
     //System tray  icon
     private  java.awt.Image trayImage = Toolkit.getDefaultToolkit().getImage(WindowLoader.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"));
-    private  TrayIcon trayIcon = new TrayIcon(trayImage,"ChatGPT Desktop");
+    private  TrayIcon trayIcon = new TrayIcon(trayImage,"AssistantGPT");
     private double xOffset = 0;
     private double yOffset = 0;
 
@@ -34,10 +34,7 @@ public class DevWindowLoader {
 
             Stage stage = new Stage();
             stage.getIcons().add(new Image(String.valueOf(WindowLoader.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
-            stage.setTitle("ChatGPT Desktop");
-            scene.setOnMouseEntered(e->{
-
-            });
+            stage.setTitle("AssistantGPT");
             scene.setOnKeyPressed(event -> {
                 if (event.isControlDown() && event.getCode() == KeyCode.WINDOWS) {
                     minimizeToSystemTray(stage);
@@ -48,7 +45,12 @@ public class DevWindowLoader {
             scene.setOnMousePressed(this::onMousePressed);
             scene.setOnMouseDragged(this::onMouseDragged);
             stage.initModality(Modality.APPLICATION_MODAL);
-            stage.initStyle(StageStyle.TRANSPARENT);
+
+            stage.initStyle(StageStyle.UTILITY);
+            stage.setOnCloseRequest(
+                    e -> System.exit(0)
+            );
+            stage.setResizable(true);
             stage.setScene(scene);
             //set window screen position
             setStageOnRightCenterScreenSide(stage);

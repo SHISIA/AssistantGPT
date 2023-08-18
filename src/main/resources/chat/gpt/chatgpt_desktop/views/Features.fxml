@@ -19,7 +19,7 @@
                   <Image url="@../icons/logo.png" />
                </image>
             </ImageView>
-            <Label prefHeight="49.0" prefWidth="130.0" text="ChatGPT Desktop" textFill="#d1a94a">
+            <Label prefHeight="49.0" prefWidth="130.0" text="AssistantGPT" textFill="#d1a94a">
                <font>
                   <Font size="15.0" />
                </font>
@@ -28,12 +28,12 @@
       </HBox>
       <Pane layoutX="141.0" layoutY="219.0" prefHeight="136.0" prefWidth="216.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 14;">
          <children>
-            <Label layoutX="57.0" layoutY="2.0" prefHeight="43.0" prefWidth="102.0" text="ChatGPT" textFill="#f4f3f1">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="2.0" prefHeight="43.0" prefWidth="102.0" text="Chat" textAlignment="CENTER" textFill="#f4f3f1">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="20.0" layoutY="29.0" prefHeight="92.0" prefWidth="184.0" text="The text/chatting part alone. This features interactive chats, replies from ChatGPT and prompt saving" textFill="#8b8b8b" wrapText="true">
+            <Label layoutX="20.0" layoutY="29.0" prefHeight="92.0" prefWidth="184.0" text="The text/chatting part alone. This features interactive chats, replies from DeepAI and prompt saving" textFill="#8b8b8b" wrapText="true">
                <font>
                   <Font size="13.0" />
                </font>
@@ -93,14 +93,14 @@
             <Font size="25.0" />
          </font>
       </JFXCheckBox>
-      <JFXCheckBox fx:id="imgGenCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" layoutX="454.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="70.0" text="CheckBox" textFill="TRANSPARENT" wrapText="true">
+      <JFXCheckBox fx:id="imgGenCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" indeterminate="true" layoutX="424.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0" text="Coming Soon" textFill="#f7f7f7" unCheckedColor="#595555" wrapText="true">
          <font>
-            <Font size="25.0" />
+            <Font size="13.0" />
          </font>
       </JFXCheckBox>
-      <JFXCheckBox fx:id="allFeatureCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" layoutX="671.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="70.0" textFill="TRANSPARENT" wrapText="true">
+      <JFXCheckBox fx:id="imgGenCheck1" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" indeterminate="true" layoutX="633.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0" selected="true" text="Coming Soon" textFill="#f7f7f7" unCheckedColor="#595555" wrapText="true">
          <font>
-            <Font size="25.0" />
+            <Font size="13.0" />
          </font>
       </JFXCheckBox>
    </children>

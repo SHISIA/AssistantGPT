@@ -8,6 +8,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -30,18 +35,13 @@ public class HomeController implements Initializable {
         WindowLoader.loadWindowFromPassedFxmlPath("HomeImage");
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Set up an event handler for the key combination
-        // Create a key combination Ctrl + O to open the view
 
         //initialize the webview browser with our chat window set
         WebEngine webEngine = webView.getEngine();
-        // Set up a CookieManager with a permissive CookiePolicy
-//        CookieManager cookieManager = new CookieManager();
-//        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
           webView.getEngine().setJavaScriptEnabled(true);
-//        CookieHandler.setDefault(cookieManager);
         webEngine.setUserStyleSheetLocation(getClass().getResource("/chat/gpt/chatgpt_desktop/css/webView.css").toString());
 
         // Set the user agent to mimic Firefox
@@ -51,6 +51,35 @@ public class HomeController implements Initializable {
 
         //load the deep AI chat site as our primary chat agent
         webEngine.load("https://deepai.org/chat");
+        webView.setContextMenuEnabled(false);
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem copyMenuItem = new MenuItem("Copy");
+        copyMenuItem.setOnAction(event -> copySelectedText(webView));
+
+        contextMenu.getItems().addAll(copyMenuItem);
+        //enable copying from web
+        webView.setOnMousePressed(e -> {
+            if (e.getButton() == MouseButton.SECONDARY) {
+                contextMenu.show(webView, e.getScreenX(), e.getScreenY());
+            }
+            else {
+                contextMenu.hide();
+            }
+
+        });
+    }
+
+    //copy selected text from WebView
+    private void copySelectedText(WebView webView) {
+        String selectedText = (String) webView.getEngine().executeScript("window.getSelection().toString()");
+
+        if (!selectedText.isEmpty()) {
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent content = new ClipboardContent();
+            content.putString(selectedText);
+            clipboard.setContent(content);
+        }
     }
 
     public void addPrompt() {

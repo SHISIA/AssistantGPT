@@ -7,21 +7,23 @@ import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
 public class WindowLoader {
     public static Stage appStage;
-    public static void loadWindowFromPassedFxmlPath(String path){
+
+    public static void loadWindowFromPassedFxmlPath(String path) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(WindowLoader.class.getResource("/chat/gpt/chatgpt_desktop/views/"+path+".fxml"));
+            loader.setLocation(WindowLoader.class.getResource("/chat/gpt/chatgpt_desktop/views/" + path + ".fxml"));
             Scene scene = new Scene(loader.load());
             Stage stage = new Stage();
             stage.getIcons().add(new Image(String.valueOf(WindowLoader.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
-            stage.setTitle("ChatGPT Desktop");
-            scene.setOnKeyPressed(e->{
+            stage.setTitle("AssistantGPT");
+            scene.setOnKeyPressed(e -> {
                 if (e.isControlDown() && e.getCode() == KeyCode.WINDOWS) {
 //                    stage.g
                     stage.hide();
-                    appStage=stage;
+                    appStage = stage;
                     new DevWindowLoader().loadWindowFromPassedFxmlPath("MiniProgramming");
                 }
             });
