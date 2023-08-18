@@ -38,4 +38,8 @@ public class MiniProgrammingController implements Initializable {
         }
     }
 
+    public void closeApp(){
+        System.exit(0);
+    }
+
 }

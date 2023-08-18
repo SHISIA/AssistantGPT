@@ -10,6 +10,7 @@
 
 <VBox alignment="CENTER" prefHeight="444.0" prefWidth="302.0" style="-fx-background-color: #17181C; -fx-background-radius: 8; -fx-border-radius: 8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chat.gpt.chatgpt_desktop.Controller.MiniProgrammingController">
    <children>
+      <HBox id="draggPane" fx:id="draggPane" prefHeight="9.0" prefWidth="302.0" stylesheets="@../css/webView.css" />
       <HBox alignment="CENTER" prefHeight="27.0" prefWidth="308.0" spacing="5.0" style="-fx-background-color: #17181C;" VBox.vgrow="ALWAYS">
          <children>
             <JFXToggleButton fx:id="toggle" onAction="#toggleAlwaysOnTop" prefHeight="58.0" prefWidth="135.0" text="Always On" textFill="WHITE" toggleColor="#d1a94a" toggleLineColor="#d1a94a" unToggleColor="#d1a94a" />
