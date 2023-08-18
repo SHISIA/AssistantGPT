@@ -47,9 +47,7 @@ public class DevWindowLoader {
             stage.initModality(Modality.APPLICATION_MODAL);
 
             stage.initStyle(StageStyle.UTILITY);
-            stage.setOnCloseRequest(
-                    e -> System.exit(0)
-            );
+            stage.setOnCloseRequest(e -> System.exit(0));
             stage.setResizable(true);
             stage.setScene(scene);
             //set window screen position
@@ -60,6 +58,9 @@ public class DevWindowLoader {
         }
     }
 
+    /**
+     *
+     */
     public void setStageOnRightCenterScreenSide(Stage primaryStage){
         // Calculate the window position for bottom-right corner
         Screen screen = Screen.getPrimary();

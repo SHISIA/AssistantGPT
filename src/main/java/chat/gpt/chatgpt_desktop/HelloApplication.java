@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/Intro.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("ChatGPT Desktop");
+        stage.setTitle("AssistantGPT");
         stage.getIcons().add(new Image(String.valueOf(HelloApplication.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
         stage.setScene(scene);
         stage.show();

@@ -26,7 +26,7 @@
                         <Image url="@../icons/logo.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="49.0" prefWidth="130.0" text="ChatGPT Desktop" textFill="#d1a94a">
+                  <Label prefHeight="49.0" prefWidth="130.0" text="AssistantGPT" textFill="#d1a94a">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -89,21 +89,6 @@
                <VBox.margin>
                   <Insets />
                </VBox.margin></AnchorPane>
-            <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="708.0" spacing="200.0" VBox.vgrow="ALWAYS">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
-               </padding>
-               <children>
-                  <Button fx:id="miniButton" mnemonicParsing="false" onAction="#loadMini" text="Mini" textAlignment="CENTER" HBox.hgrow="ALWAYS">
-                     <HBox.margin>
-                        <Insets bottom="5.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
          </children>
          <padding>
             <Insets right="10.0" top="10.0" />

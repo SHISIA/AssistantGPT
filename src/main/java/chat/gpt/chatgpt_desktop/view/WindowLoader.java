@@ -21,7 +21,6 @@ public class WindowLoader {
             stage.setTitle("AssistantGPT");
             scene.setOnKeyPressed(e -> {
                 if (e.isControlDown() && e.getCode() == KeyCode.WINDOWS) {
-//                    stage.g
                     stage.hide();
                     appStage = stage;
                     new DevWindowLoader().loadWindowFromPassedFxmlPath("MiniProgramming");

@@ -68,37 +68,32 @@
             </Label>
          </children>
       </Pane>
-      <JFXButton fx:id="backButton" layoutX="295.0" layoutY="479.0" onAction="#goBackToIntroWindow" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: #D1A94A;" text="Back" textFill="#fdfdfd">
+      <JFXButton fx:id="backButton" layoutX="295.0" layoutY="479.0" onAction="#goBackToIntroWindow" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: #D1A94A;" text="Back" textFill="#fdfdfd" visible="false">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <ImageView fx:id="infoBtn" fitHeight="31.0" fitWidth="31.0" layoutX="915.0" layoutY="535.0">
-         <image>
-            <Image url="@../icons/info.png" />
-         </image>
-      </ImageView>
       <Label alignment="CENTER" layoutX="227.0" layoutY="122.0" prefHeight="61.0" prefWidth="523.0" text="What Features are you going to use?" textFill="#d1a94a">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <JFXButton fx:id="continueButton" layoutX="516.0" layoutY="479.0" onAction="#continueToHomeWindow" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: #D1A94A;" text="Continue" textFill="#fbfbfb">
+      <JFXButton fx:id="continueButton" layoutX="415.0" layoutY="491.0" onAction="#continueToHomeWindow" prefHeight="43.0" prefWidth="216.0" style="-fx-background-color: transparent; -fx-border-color: #D1A94A; -fx-background-radius: 6; -fx-border-radius: 6;" text="Continue" textFill="#fbfbfb">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXCheckBox fx:id="chatgptCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" layoutX="239.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="70.0" selected="true" text="CheckBox" textFill="TRANSPARENT" wrapText="true">
+      <JFXCheckBox fx:id="chatgptCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" disable="true" layoutX="239.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="70.0" selected="true" text="CheckBox" textFill="TRANSPARENT" wrapText="true">
          <font>
             <Font size="25.0" />
          </font>
       </JFXCheckBox>
-      <JFXCheckBox fx:id="imgGenCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" indeterminate="true" layoutX="424.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0" text="Coming Soon" textFill="#f7f7f7" unCheckedColor="#595555" wrapText="true">
+      <JFXCheckBox fx:id="imgGenCheck" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" disable="true" indeterminate="true" layoutX="424.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0" text="Coming Soon" textFill="#f7f7f7" unCheckedColor="#595555" wrapText="true">
          <font>
             <Font size="13.0" />
          </font>
       </JFXCheckBox>
-      <JFXCheckBox fx:id="imgGenCheck1" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" indeterminate="true" layoutX="633.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0" selected="true" text="Coming Soon" textFill="#f7f7f7" unCheckedColor="#595555" wrapText="true">
+      <JFXCheckBox fx:id="imgGenCheck1" alignment="CENTER" checkedColor="#d1a94a" contentDisplay="CENTER" disable="true" indeterminate="true" layoutX="633.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0" selected="true" text="Coming Soon" textFill="#f7f7f7" unCheckedColor="#595555" wrapText="true">
          <font>
             <Font size="13.0" />
          </font>
