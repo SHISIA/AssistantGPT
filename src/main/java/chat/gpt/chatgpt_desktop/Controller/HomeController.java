@@ -3,25 +3,15 @@ package chat.gpt.chatgpt_desktop.Controller;
 import chat.gpt.chatgpt_desktop.view.DevWindowLoader;
 import chat.gpt.chatgpt_desktop.view.PromptWindowLoader;
 import chat.gpt.chatgpt_desktop.view.WindowLoader;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
-import javafx.concurrent.Worker;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.effect.BoxBlur;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyCodeCombination;
-import javafx.scene.input.KeyCombination;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
-import java.net.CookieHandler;
-import java.net.CookieManager;
-import java.net.CookiePolicy;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -50,7 +40,7 @@ public class HomeController implements Initializable {
         // Set up a CookieManager with a permissive CookiePolicy
 //        CookieManager cookieManager = new CookieManager();
 //        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
-        webView.getEngine().setJavaScriptEnabled(true);
+          webView.getEngine().setJavaScriptEnabled(true);
 //        CookieHandler.setDefault(cookieManager);
         webEngine.setUserStyleSheetLocation(getClass().getResource("/chat/gpt/chatgpt_desktop/css/webView.css").toString());
 
@@ -64,10 +54,12 @@ public class HomeController implements Initializable {
     }
 
     public void addPrompt() {
-        PromptWindowLoader.loadWindowFromPassedFxmlPath("PromptController");
+        PromptWindowLoader.loadWindowFromPassedFxmlPath("Prompt");
     }
 
     public void loadMini(){
-        DevWindowLoader.loadWindowFromPassedFxmlPath("MiniProgramming");
+        Stage stage=(Stage) miniButton.getScene().getWindow();
+        stage.hide();
+        new DevWindowLoader().loadWindowFromPassedFxmlPath("MiniProgramming");
     }
 }
