@@ -1,3 +1,7 @@
 #draggPane:hover{
    -fx-cursor: move;
 }
+/* Force scrollbars to always be visible */
+.scroll-pane .scroll-bar {
+    -fx-opacity: 1;
+}

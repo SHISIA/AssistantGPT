@@ -8,11 +8,13 @@ import javafx.scene.control.Button;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MiniProgrammingController implements Initializable {
+public class MiniProgrammingEdgeController implements Initializable {
     @FXML
     public Button exitBtn;
     @FXML
@@ -32,13 +34,15 @@ public class MiniProgrammingController implements Initializable {
         //initialize the webview browser with our chat window set
         WebEngine webEngine = webView.getEngine();
         webView.getEngine().setJavaScriptEnabled(true);
+        webEngine.setUserStyleSheetLocation(getClass().getResource("/chat/gpt/chatgpt_desktop/css/webView.css").toString());
 
-        // Set the user agent to mimic Firefox
-        String userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3";
-        webView.getEngine().setUserAgent(userAgent);
+        // Set the user agent to mimic Edge
+        String edgeUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36 Edg/100.0.0.0";
+        webView.getEngine().setUserAgent(edgeUserAgent);
 
         //load the deep AI chat site as our primary chat agent
-        webEngine.load("https://deepai.org/chat");
+        webEngine.load("https://bard.google.com/");
+
     }
 
     //keeps the window on top as I browse other apps

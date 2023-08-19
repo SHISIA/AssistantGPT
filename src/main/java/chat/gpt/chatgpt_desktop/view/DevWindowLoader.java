@@ -44,9 +44,13 @@ public class DevWindowLoader {
             // Add event handlers for dragging the stage
             scene.setOnMousePressed(this::onMousePressed);
             scene.setOnMouseDragged(this::onMouseDragged);
+            scene.setOnMouseReleased(e->
+            {
+                stage.setOpacity(1);
+            });
             stage.initModality(Modality.APPLICATION_MODAL);
 
-            stage.initStyle(StageStyle.UTILITY);
+//            stage.initStyle(StageStyle.TRANSPARENT);
             stage.setOnCloseRequest(e -> System.exit(0));
             stage.setResizable(true);
             stage.setScene(scene);
@@ -79,9 +83,12 @@ public class DevWindowLoader {
         Stage stage = (Stage) ((Scene) event.getSource()).getWindow();
         stage.setX(event.getScreenX() - xOffset);
         stage.setY(event.getScreenY() - yOffset);
+        stage.setOpacity(0.7); // Reduce opacity while dragging
+        stage.setOpacity(0.7); // Reduce opacity while dragging
     }
     //implement pressing
     private void onMousePressed(MouseEvent event) {
+        Stage stage = (Stage) ((Scene) event.getSource()).getWindow();
         xOffset = event.getSceneX();
         yOffset = event.getSceneY();
     }

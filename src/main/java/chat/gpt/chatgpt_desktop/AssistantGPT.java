@@ -17,7 +17,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.sql.*;
 
-public class HelloApplication extends Application {
+public class AssistantGPT extends Application {
     //Connect to the Database
     private final DBConnector connector=new DBConnector();
     private boolean introScreenShown;
@@ -25,25 +25,34 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         if (checkIfEULAIsShown()) {
+            //if Eula is  shown. By Eula, I mean the welcome introduction onboarding screens,
+            //start normally from splash screen
             startFromSplash(stage);
         } else {
+            //if Eula is not shown. By Eula, I mean the welcome introduction onboarding screens,
+            // then save the state and then start from Onboard User
             showEULA();
             startFromIntro(stage);
         }
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
-    //start from introduction
+    //start from an introduction
     public void startFromIntro(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/Intro.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AssistantGPT.class.getResource("views/Intro.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("AssistantGPT");
-        stage.getIcons().add(new Image(String.valueOf(HelloApplication.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
+        stage.getIcons().add(new Image(String.valueOf(AssistantGPT.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
         stage.setScene(scene);
         stage.show();
     }
     //start normally from the splashscreen
     public void startFromSplash(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/chat/gpt/chatgpt_desktop/views/Loader.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AssistantGPT.class.getResource("/chat/gpt/chatgpt_desktop/views/Loader.fxml"));
         AnchorPane anchorPane=fxmlLoader.load();
         Scene scene = new Scene(anchorPane);
         stage.setTitle("AssistantGPT");
@@ -61,7 +70,7 @@ public class HelloApplication extends Application {
         pauseTransition.play();
         stage.initStyle(StageStyle.TRANSPARENT);
         scene.setFill(Color.TRANSPARENT);
-        stage.getIcons().add(new Image(String.valueOf(HelloApplication.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
+        stage.getIcons().add(new Image(String.valueOf(AssistantGPT.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
         stage.setScene(scene);
         stage.show();
     }

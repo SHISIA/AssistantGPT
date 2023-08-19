@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXScrollPane?>
 <?import com.jfoenix.controls.JFXToggleButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -8,9 +9,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.web.WebView?>
 
-<VBox alignment="CENTER" prefHeight="432.0" prefWidth="296.0" style="-fx-background-color: #17181C;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chat.gpt.chatgpt_desktop.Controller.MiniProgrammingController">
+<VBox alignment="CENTER" prefHeight="444.0" prefWidth="316.0" style="-fx-background-color: #17181C;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chat.gpt.chatgpt_desktop.Controller.MiniProgrammingEdgeController">
    <children>
-      <HBox alignment="CENTER" prefHeight="14.0" prefWidth="281.0" spacing="5.0" style="-fx-background-color: #17181C;">
+      <HBox id="draggPane" fx:id="draggPane" prefHeight="9.0" prefWidth="302.0" stylesheets="@../css/webView.css" />
+      <HBox alignment="CENTER" prefHeight="27.0" prefWidth="308.0" spacing="5.0" style="-fx-background-color: #17181C;" VBox.vgrow="ALWAYS">
          <children>
             <JFXToggleButton fx:id="toggle" onAction="#toggleAlwaysOnTop" prefHeight="58.0" prefWidth="147.0" text="Float Window" textFill="WHITE" toggleColor="#d1a94a" toggleLineColor="#d1a94a" unToggleColor="#d1a94a" />
             <Button fx:id="exitBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#closeMini" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #D1A94A; -fx-border-color: grey; -fx-background-radius: 6; -fx-border-radius: 6;" text="Return" textFill="#f8f8f8" />
@@ -24,6 +26,10 @@
             <Insets left="5.0" right="10.0" />
          </VBox.margin>
       </HBox>
-      <WebView fx:id="webView" prefHeight="375.0" prefWidth="379.0" VBox.vgrow="ALWAYS" />
+      <JFXScrollPane VBox.vgrow="ALWAYS">
+         <children>
+            <WebView fx:id="webView" prefHeight="374.0" prefWidth="302.0" />
+         </children>
+      </JFXScrollPane>
    </children>
 </VBox>
