@@ -1,7 +1,42 @@
-#draggPane:hover{
-   -fx-cursor: move;
-}
+
 /* Force scrollbars to always be visible */
 .scroll-pane .scroll-bar {
     -fx-opacity: 1;
+}
+/**Set color of all items**/
+.list-cell{
+    -fx-background-color:transparent;
+}
+/* Define a style class for the scrollbar */
+.list-view-scrollbar {
+    /* Customize the width and color of the scrollbar */
+    -fx-pref-width:8px; /* Set the width of the scrollbar */
+    -fx-background-color: transparent; /* Set the background color of the scrollbar track */
+}
+
+/* Customize the thumb of the scrollbar */
+.list-view-scrollbar .thumb {
+    -fx-background-color: #17181C; /* Set the color of the scrollbar thumb */
+    -fx-border-color:#17181C;
+}
+
+.list-view-scrollbar .thumb:hover {
+    -fx-background-color: #d1a94a; /* Set the color of the scrollbar thumb */
+}
+
+
+/* Customize the arrow buttons of the scrollbar (optional) */
+.list-view-scrollbar .increment-button, .list-view-scrollbar .decrement-button {
+    -fx-background-color: #17181C; /* Set the background color of the arrow buttons */
+    -fx-border-color:#17181C;
+    -fx-shape: null; /* Remove the default arrow shape */
+}
+
+/* Customize the scrollbar track (optional) */
+.list-view-scrollbar .track,
+.list-view-scrollbar .track{
+    -fx-background-color :#17181C;
+    -fx-border-color:#17181C;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
 }

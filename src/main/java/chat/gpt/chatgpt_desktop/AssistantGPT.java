@@ -52,24 +52,24 @@ public class AssistantGPT extends Application {
     }
     //start normally from the splashscreen
     public void startFromSplash(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(AssistantGPT.class.getResource("/chat/gpt/chatgpt_desktop/views/Loader.fxml"));
-        AnchorPane anchorPane=fxmlLoader.load();
-        Scene scene = new Scene(anchorPane);
+        FXMLLoader fxmlLoader = new FXMLLoader(AssistantGPT.class.getResource("/chat/gpt/chatgpt_desktop/views/Home.fxml"));
+//        AnchorPane anchorPane=fxmlLoader.load();
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("AssistantGPT");
-        // Initialize the fade transition
-        FadeTransition fadeTransition = getFadeTransition(anchorPane);
-
-        // Create a pause transition to stop the fade after specified seconds
-        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(9));
-        pauseTransition.setOnFinished(event -> {
-            fadeTransition.stop(); // Stop the fade transition
-           stage.close();
-           //load the home controller
-            WindowLoader.loadWindowFromPassedFxmlPath("Home");
-        });
-        pauseTransition.play();
-        stage.initStyle(StageStyle.TRANSPARENT);
-        scene.setFill(Color.TRANSPARENT);
+//        // Initialize the fade transition
+//        FadeTransition fadeTransition = getFadeTransition(anchorPane);
+//
+//        // Create a pause transition to stop the fade after specified seconds
+//        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(9));
+//        pauseTransition.setOnFinished(event -> {
+//            fadeTransition.stop(); // Stop the fade transition
+//           stage.close();
+//           //load the home controller
+//            WindowLoader.loadWindowFromPassedFxmlPath("Home");
+//        });
+//        pauseTransition.play();
+//        stage.initStyle(StageStyle.TRANSPARENT);
+//        scene.setFill(Color.TRANSPARENT);
         stage.getIcons().add(new Image(String.valueOf(AssistantGPT.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
         stage.setScene(scene);
         stage.show();

@@ -55,7 +55,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <JFXListView fx:id="promptsList" prefHeight="493.0" prefWidth="277.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                  <JFXListView fx:id="promptsList" prefHeight="493.0" prefWidth="277.0" style="-fx-background-color: null; -fx-border-color: null;" styleClass="list-view-scrollbar" stylesheets="@../css/webView.css" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </VBox.margin>

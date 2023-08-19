@@ -9,8 +9,6 @@ module chat.gpt.chatgpt_desktop {
     requires com.jfoenix;
     requires java.desktop;
     requires javafx.swing;
-//    requires x86;
-    requires org.eclipse.swt.win32.win32.x86_64;
     requires java.sql;
 
     opens chat.gpt.chatgpt_desktop to javafx.fxml;

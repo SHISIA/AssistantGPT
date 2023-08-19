@@ -1,5 +1,6 @@
 package chat.gpt.chatgpt_desktop.Controller;
 
+import chat.gpt.chatgpt_desktop.Model.DBConnector;
 import chat.gpt.chatgpt_desktop.view.DevWindowLoader;
 import chat.gpt.chatgpt_desktop.view.InfoLoader;
 import chat.gpt.chatgpt_desktop.view.PromptWindowLoader;
@@ -9,26 +10,29 @@ import com.jfoenix.controls.JFXListView;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
+import javafx.geometry.Insets;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.MouseButton;
-import javafx.scene.web.PopupFeatures;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
-    public JFXListView<Node> promptsList;
+    private final DBConnector connector=new DBConnector();
+    private final Connection connection=connector.getConnection();
+    public JFXListView<VBox> promptsList;
     @FXML
     public WebView webView;
     @FXML
@@ -77,10 +81,9 @@ public class HomeController implements Initializable {
         ContextMenu contextMenu = new ContextMenu();
         MenuItem copyMenuItem = new MenuItem("Copy");
         copyMenuItem.setOnAction(event -> copySelectedText(webView));
-
         contextMenu.getItems().addAll(copyMenuItem);
-        // Set a custom handler for popups
-        // You can also suppress the popup by not showing the alert
+        loadPrompts();
+
     }
 
     //copy selected text from WebView
@@ -95,6 +98,45 @@ public class HomeController implements Initializable {
         }
     }
 
+    /**populate the prompts list with saved prompts onLoad**/
+    public void loadPrompts(){
+        try {
+            PreparedStatement statement=connection.prepareStatement("SELECT * FROM Prompts;");
+            //bind the values to placeholders
+            ResultSet set=statement.executeQuery();
+            while (set.next()){
+                //loop while creating cards for each prompt
+                prompt(set.getString("Title"),set.getString("Content"));
+            }
+            connection.close();
+        }catch (SQLException e){
+            e.getMessage();
+        }
+    }
+
+    /**Individual Prompt**/
+    public void prompt(String titleText,String contentTitle){
+        VBox vBox=new VBox();
+        Label title=new Label(titleText);
+        title.setPrefHeight(50);
+        title.setFont(Font.font(20));
+        title.setStyle("-fx-text-fill:white;");
+        vBox.setStyle("-fx-border-radius:12;" +
+                "-fx-background-radius:12;" +
+                "-fx-background-color:#23252A;");
+
+        Label content=new Label(contentTitle);
+        content.setStyle("-fx-text-fill:grey;");
+        content.setWrapText(true);
+        content.setTooltip(new Tooltip(title.getText()));
+        vBox.getChildren().addAll(title,content);
+        vBox.setPrefWidth(150);
+        vBox.setPrefHeight(120);
+        vBox.setPadding(new Insets(10,10,10,10));
+        promptsList.getItems().add(vBox);
+    }
+
+    /**Add a new prompt:: Loads the window to add/save  a prompt**/
     public void addPrompt() {
         PromptWindowLoader.loadWindowFromPassedFxmlPath("Prompt");
     }
