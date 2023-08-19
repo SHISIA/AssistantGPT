@@ -1,8 +1,10 @@
 package chat.gpt.chatgpt_desktop.Controller;
 
 import chat.gpt.chatgpt_desktop.view.DevWindowLoader;
+import chat.gpt.chatgpt_desktop.view.InfoLoader;
 import chat.gpt.chatgpt_desktop.view.PromptWindowLoader;
 import chat.gpt.chatgpt_desktop.view.WindowLoader;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,6 +12,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.MouseButton;
@@ -26,6 +30,8 @@ public class HomeController implements Initializable {
     public WebView webView;
     @FXML
     public Button miniButton;
+    @FXML
+    public JFXButton popInfo;
 
     //open the Intro window
     public void goToHomeImageIfEnabled() {
@@ -35,9 +41,22 @@ public class HomeController implements Initializable {
         WindowLoader.loadWindowFromPassedFxmlPath("HomeImage");
     }
 
+    //load the info window
+    public void info(){
+        new InfoLoader().loadWindowFromPassedFxmlPath("Info");
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Load the image for info button icon
+        Image iconImage = new Image(String.valueOf(getClass().getResource("/chat/gpt/chatgpt_desktop/icons/info.png")));
+
+        // Create an ImageView with the image
+        ImageView iconImageView = new ImageView(iconImage);
+        iconImageView.setFitWidth(31);
+        iconImageView.setFitHeight(31);
+        // Create a button and set the image as its graphic
+        popInfo.setGraphic(iconImageView);
 
         //initialize the webview browser with our chat window set
         WebEngine webEngine = webView.getEngine();
@@ -91,4 +110,5 @@ public class HomeController implements Initializable {
         stage.hide();
         new DevWindowLoader().loadWindowFromPassedFxmlPath("MiniProgramming");
     }
+
 }

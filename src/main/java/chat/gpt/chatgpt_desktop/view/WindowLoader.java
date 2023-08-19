@@ -26,6 +26,9 @@ public class WindowLoader {
                     new DevWindowLoader().loadWindowFromPassedFxmlPath("MiniProgramming");
                 }
             });
+            if (path.equals("Home")){
+                stage.setMaximized(true);
+            }
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
