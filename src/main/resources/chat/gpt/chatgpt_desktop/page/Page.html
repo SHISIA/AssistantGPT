@@ -1,0 +1,2420 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html>
+
+<head>
+    <title> AI Chat </title>
+    <script type="application/ld+json"></script>
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+
+
+    <meta name="description"
+        content="AI Chat is an AI chatbot that writes text. You can use it to write stories, messages, or programming code. You can use the AI chatbot as a virtual tutor in almost any subject.">
+    <meta property="og:url" content="https://deepai.org/chat">
+    <meta property="og:site_name" content="DeepAI">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI Chat - DeepAI">
+    <meta property="og:description"
+        content="AI Chat is an AI chatbot that writes text. You can use it to write stories, messages, or programming code. You can use the AI chatbot as a virtual tutor in almost any subject.">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@DeepAI">
+    <meta name="twitter:creator" content="@DeepAI">
+
+    <meta name="twitter:title" content="AI Chat - DeepAI">
+    <meta name="twitter:description"
+        content="AI Chat is an AI chatbot that writes text. You can use it to write stories, messages, or programming code. You can use the AI chatbot as a virtual tutor in almost any subject.">
+    <meta name="twitter:image" content="">
+
+    <meta property="article:published_time" content="" />
+    <!-- PLACE THIS SECTION INSIDE OF YOUR HEAD TAGS -->
+    <!-- Below is a recommended list of pre-connections, which allow the network to establish each connection quicker, speeding up response times and improving ad performance. -->
+    <link rel="preconnect" href="https://a.pub.network/" crossorigin />
+    <link rel="preconnect" href="https://b.pub.network/" crossorigin />
+    <link rel="preconnect" href="https://c.pub.network/" crossorigin />
+    <link rel="preconnect" href="https://d.pub.network/" crossorigin />
+    <link rel="preconnect" href="https://c.amazon-adsystem.com" crossorigin />
+    <link rel="preconnect" href="https://s.amazon-adsystem.com" crossorigin />
+    <link rel="preconnect" href="https://secure.quantserve.com/" crossorigin />
+    <link rel="preconnect" href="https://rules.quantcount.com/" crossorigin />
+    <link rel="preconnect" href="https://pixel.quantserve.com/" crossorigin />
+    <link rel="preconnect" href="https://cmp.quantcast.com/" crossorigin />
+    <link rel="preconnect" href="https://btloader.com/" crossorigin />
+    <link rel="preconnect" href="https://api.btloader.com/" crossorigin />
+    <link rel="preconnect" href="https://confiant-integrations.global.ssl.fastly.net" crossorigin />
+    <!-- Below is a link to a CSS file that accounts for Cumulative Layout Shift, a new Core Web Vitals subset that Google uses to help rank your site in search -->
+    <!-- The file is intended to eliminate the layout shifts that are seen when ads load into the page. If you don't want to use this, simply remove this file -->
+    <!-- To find out more about CLS, visit https://web.dev/vitals/ -->
+    <link rel="stylesheet" href="https://a.pub.network/core/pubfig/cls.css">
+    <!--  -->
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari&display=swap');
+
+        body {
+            margin: 0;
+            background-color: #17181C
+        }
+
+        * {
+            font-family: IBM Plex Sans Devanagari, sans-serif !important
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        header {
+            height: 78px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            z-index: 1
+        }
+
+        header a.logo-link,
+        footer a.logo-link {
+            display: flex;
+            color: white !important;
+            cursor: pointer;
+            font-weight: bolder;
+            font-size: 20px;
+            padding: 17px
+        }
+
+        header nav {
+            margin-left: auto;
+            max-height: 40px
+        }
+
+        header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            white-space: nowrap;
+            align-items: center
+        }
+
+        header ul li {
+            display: block;
+            float: left;
+            font-size: 16px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-family: 'IBM Plex Sans Devanagari', sans-serif;
+            color: #fff;
+            line-height: 25px
+        }
+
+        header ul li a {
+            text-decoration: none;
+            cursor: pointer
+        }
+
+        .menu-icon {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            vertical-align: middle
+        }
+
+        header ul li a:hover {
+            text-decoration: none;
+            color: #3A90E0
+        }
+
+        header ul li.dropdown:hover {
+            color: #3A90E0;
+            cursor: pointer
+        }
+
+        header .dropdown {
+            position: unset
+        }
+
+        ul li.dropdown ul {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            transition: all 0.5s ease;
+            box-shadow: 0px 3px 4px rgb(0 0 0 / 74%);
+            display: none;
+            background-color: #101010;
+            padding: 8px 12px;
+            top: 46px;
+            border-radius: 0 0 8px 8px;
+            z-index: 1;
+            right: 3px
+        }
+
+        .show-dropdown {
+            visibility: visible !important;
+            opacity: 1 !important;
+            display: block !important
+        }
+
+        ul li.dropdown ul a {
+            clear: both;
+            width: 100%;
+            display: block;
+            margin: 0;
+            position: relative
+        }
+
+        ul li.dropdown ul li {
+            margin: 4px 5px;
+            cursor: pointer
+        }
+
+        .search-bar-container {
+            background: #212121;
+            border-radius: 30px;
+            margin: 0 9px 0 9px;
+            height: 32px;
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid #ffffffa6;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            box-shadow: inset 0px 2px 4px rgb(32 33 36 / 27%)
+        }
+
+        .search-bar-container img {
+            height: 17px;
+            margin: 8px
+        }
+
+        .search-bar {
+            height: 100%;
+            width: 100%
+        }
+
+        .search-bar input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 0;
+            color: white;
+            background-color: rgba(0, 0, 0, 0)
+        }
+
+        .loading {
+            background: url(/static/images/loading.gif) no-repeat right center !important;
+            background-size: contain !important
+        }
+
+        .loading-center {
+            background: url(/static/images/loading.gif) no-repeat center center;
+            background-size: contain;
+            height: 50px
+        }
+
+        a.button {
+            display: flex;
+            padding: 6px 19px;
+            font-size: 14px;
+            border-radius: 45px;
+            border: 1px solid #1e79d1;
+            vertical-align: bottom;
+            white-space: nowrap;
+            font-weight: bold;
+            color: #1e79d1;
+            margin-left: 9px
+        }
+
+        a.button:hover {
+            opacity: 0.7;
+            border-color: #3A90E0
+        }
+
+        a.button:active {
+            opacity: 0.9
+        }
+
+        a.button.highlighted {
+            background-color: #a01ed1;
+            color: white;
+            width: auto;
+            background: linear-gradient(94deg, #c764ec, #4a36b1);
+            height: auto;
+            border: none;
+            cursor: pointer
+        }
+
+        a.button.hotline {
+            background: transparent;
+            color: #c764ec;
+            width: auto;
+            height: auto;
+            border: 1px solid #c764ec;
+            cursor: pointer
+        }
+
+        a.login-button {
+            border: none;
+            color: white;
+            cursor: pointer
+        }
+
+        input:focus,
+        button {
+            outline: none
+        }
+
+        footer {
+            text-align: center;
+            color: #a3a8ac
+        }
+
+        a.button.fitter {
+            width: fit-content
+        }
+
+        a.button.doublecolor {
+            border-radius: 8px;
+            border-right: 1px solid #e7416b;
+            border-bottom: 1px solid #e7416b;
+            border-left: 1px solid #1e79d1;
+            border-top: 1px solid #1e79d1;
+            background: transparent;
+            padding: 0.3em;
+            color: white;
+            width: auto;
+            height: auto
+        }
+
+        #social-modal {
+            min-width: 400px;
+            background-color: #101010
+        }
+
+        footer a {
+            color: #a3a8ac
+        }
+
+        footer h2 {
+            color: #4e5d69;
+            font-size: 42px
+        }
+
+        footer p {
+            color: #a3a8ac;
+            font-size: 12px
+        }
+
+        .footer-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center
+        }
+
+        dialog {
+            padding: 0;
+            border: 0;
+            border-radius: 0.6rem;
+            box-shadow: 0 0 1em black
+        }
+
+        dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.4)
+        }
+
+        dialog+.backdrop {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.4)
+        }
+
+        dialog[open] {
+            animation: slide-up 0.4s ease-out
+        }
+
+        dialog {
+            display: none;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 90vw;
+            background-color: white;
+            border-radius: 8px
+        }
+
+        dialog[open] {
+            display: block
+        }
+
+        dialog#signup-modal form,
+        dialog#login-modal form {
+            display: block;
+            margin: 20px;
+            width: 500px
+        }
+
+        dialog#subscription-modal form {
+            display: block;
+            margin: 20px;
+            width: 600px
+        }
+
+        dialog input[type=text] {
+            height: 40px;
+            width: 60%;
+            border-radius: 8px;
+            padding: 0 6px;
+            font-size: 1em;
+            border-radius: 23px;
+            box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, .26);
+            border-width: 0;
+            border-style: none;
+            -webkit-appearance: none;
+            margin: 10px auto;
+            display: block
+        }
+
+        dialog input[type=email] {
+            height: 40px;
+            width: 60%;
+            border-radius: 8px;
+            padding: 0 6px;
+            font-size: 1em;
+            border-radius: 23px;
+            box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, .26);
+            border-width: 0;
+            border-style: none;
+            -webkit-appearance: none;
+            margin: 10px auto;
+            display: block
+        }
+
+        dialog input[type=password] {
+            height: 40px;
+            width: 60%;
+            border-radius: 8px;
+            padding: 0 6px;
+            font-size: 1em;
+            border-radius: 23px;
+            box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, .26);
+            border-width: 0;
+            border-style: none;
+            -webkit-appearance: none;
+            margin: 10px auto;
+            display: block
+        }
+
+        dialog .button {
+            padding: 0 28px;
+            color: #fff;
+            background: linear-gradient(94deg, #c764ec, #4a36b1);
+            font-weight: 700;
+            font-size: 1em;
+            border-radius: 35px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+            border-width: 0;
+            border-style: none;
+            -webkit-appearance: none;
+            height: 40px;
+            cursor: pointer;
+            margin: 10px auto;
+            width: 50%;
+            display: block
+        }
+
+        dialog .button.social-auth {
+            width: 48%;
+            background: #fff;
+            color: #1D2129;
+            border: 1px solid #999;
+            display: inline-block;
+            padding: 0 0 0 28px;
+            text-align: left;
+            margin: 10px 4px
+        }
+
+        dialog .button.social-auth img {
+            vertical-align: middle;
+            margin: 6px
+        }
+
+        dialog .button.more-options {
+            background: linear-gradient(94deg, #c764ec, #4a36b1)
+        }
+
+        dialog .other-options-signup-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 20px
+        }
+
+        dialog .other-options-signup-line {
+            width: 30%;
+            height: 0;
+            border: 1px solid #fff;
+            margin: 3px;
+            display: inline-block
+        }
+
+        dialog .other-options-signup {
+            color: #fff;
+            font-size: 15px;
+            padding: 0 10px 0 10px
+        }
+
+        dialog .switch-login-signup-button {
+            padding: 0 28px;
+            color: #fff;
+            background: #6ec0fd;
+            font-weight: 700;
+            font-size: .7em;
+            border-radius: 3px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+            border-width: 0;
+            border-style: none;
+            -webkit-appearance: none;
+            height: 25px;
+            cursor: pointer;
+            margin: 10px auto;
+            width: 30%;
+            display: block
+        }
+
+        .close {
+            position: absolute;
+            top: 0.2em;
+            right: 0.2em;
+            padding: 0.3em;
+            line-height: 0.6;
+            background-color: transparent;
+            border: 0;
+            font-size: 2em;
+            color: #fff
+        }
+
+        .modal-header,
+        .modal-body,
+        .modal-footer {
+            padding: 1em;
+            background-color: #2A282F;
+            text-align: center;
+            color: white
+        }
+
+        .modal-body .title {
+            font-size: 22px
+        }
+
+        .modal-body .subtitle {
+            opacity: 0.9
+        }
+
+        .modal-header {
+            margin: 0;
+            padding-bottom: 0.6em;
+            background-color: #f3f3f3;
+            border-bottom: 1px solid #f3f3f3
+        }
+
+        .modal-footer {
+            border-top: 1px solid #f3f3f3
+        }
+
+        .deepaiProSubscriptionRow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly
+        }
+
+        .deepaiProSignupRow {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly
+        }
+
+        .deepaiProPaymentRow {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            justify-content: space-evenly;
+            flex-direction: column
+        }
+
+        .subscription-modal-body {
+            width: max(40vw, 386px);
+            background-color: #2A282F
+        }
+
+        .out-of-credits-modal-body {
+            width: max(40vw, 386px);
+            background-color: #2A282F
+        }
+
+        .subscription-pro {
+            display: flex;
+            flex-direction: column
+        }
+
+        .payasyougo {
+            display: none;
+            flex-direction: column
+        }
+
+        .modal-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding-left: 50px;
+            align-items: center
+        }
+
+        .modal-row-top {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding-left: 40px;
+            align-items: center
+        }
+
+        .sub-title {
+            color: #fff;
+            text-align: center;
+            font-size: 38px;
+            padding: 0 0 0 20px
+        }
+
+        .sub-info {
+            padding: 0.5em;
+            color: #fff;
+            text-align: left;
+            font-size: 14px
+        }
+
+        .purple {
+            color: #c764ec
+        }
+
+        .smaller {
+            text-align: left;
+            font-size: 12px;
+            padding-right: 70px
+        }
+
+        .stripe-signup-button {
+            padding: 8px 30px;
+            font-size: 16px;
+            border-radius: 45px;
+            background-color: #a01ed1;
+            color: white;
+            width: auto;
+            background: linear-gradient(94deg, #c764ec, #4a36b1);
+            height: auto;
+            border: none;
+            cursor: pointer;
+            vertical-align: bottom;
+            white-space: nowrap;
+            font-weight: bold;
+            margin-bottom: 11px
+        }
+
+        .switch-pay-button {
+            font-size: 16px;
+            color: #9D9D9D;
+            padding: 10px;
+            background: transparent;
+            text-decoration: underline;
+            width: auto;
+            height: auto;
+            border: none;
+            cursor: pointer
+        }
+
+        .share-button {
+            color: #fff !important;
+            opacity: 0.65;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            flex-direction: row
+        }
+
+        .share-button img {
+            margin-right: 4px
+        }
+
+        #social-image {
+            margin: 0 auto
+        }
+
+        .separator-bullet {
+            margin: 0 4px;
+            color: #999
+        }
+
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #101010;
+            padding: 18px 10px 0
+        }
+
+        .card-list .main-list {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 100%
+        }
+
+        .card-list-item {
+            background: #101010;
+            border-radius: 8px;
+            margin: 30px auto 30px auto;
+            width: 100%;
+            max-width: 700px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            outline: none;
+            box-shadow: 0 8px 92px 20px rgb(71 28 115 / 70%)
+        }
+
+        .card-list-item .heart-link {
+            display: flex;
+            flex: 0 1;
+            flex-direction: column;
+            padding: 12px 0;
+            align-items: center
+        }
+
+        .card-list-item .card-content {
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            width: 100%;
+            border-radius: 0 8px 8px 0;
+            color: black;
+            padding: 20px
+        }
+
+        .card-list-item:hover {
+            outline: 1px solid #898989
+        }
+
+        .card-list-item .tag-container {
+            display: flex;
+            flex-direction: row
+        }
+
+        .card-list-item .card-list-item-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 12px;
+            font-size: 14px;
+            color: #999
+        }
+
+        .card-list-item .trunc-summary {
+            margin: 0 12px 12px;
+            font-size: 14px;
+            color: #fff
+        }
+
+        .card-list-item .card-footer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 12px;
+            font-size: 14px
+        }
+
+        .card-list-item .card-footer .author-link {
+            color: #c764ec
+        }
+
+        .card-list-item .title {
+            margin: 0 12px 12px;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 24px;
+            color: #fff
+        }
+
+        .card-list-item .title a {
+            color: #fff
+        }
+
+        .title-image-pro {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center
+        }
+
+        .logo-imagepro {
+            width: 15%;
+            height: 10%
+        }
+
+        .check-imagepro {
+            width: 10%
+        }
+
+        .thumbnail {
+            width: 500px;
+            max-width: 100%;
+            margin: 12px auto;
+            height: 350px;
+            max-height: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center
+        }
+
+        .middle {
+            vertical-align: middle
+        }
+
+        .float-left {
+            float: left
+        }
+
+        .float-right {
+            float: right
+        }
+
+        .hide {
+            display: none
+        }
+
+        .heart-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999 !important;
+            text-decoration: none !important;
+            cursor: pointer;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        .heart-count {
+            margin: 4px
+        }
+
+        .heart-link:not([hearted]) .hearted-heart-icon {
+            display: none
+        }
+
+        .heart-link[hearted] .unhearted-heart-icon {
+            display: none
+        }
+
+        .footer-social-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px
+        }
+
+        .show-lt-md {
+            display: none !important
+        }
+
+        .show-lt-sm {
+            display: none !important
+        }
+
+        .hide-lt-xlg {
+            display: none !important
+        }
+
+        .hide-lg {
+            display: none !important
+        }
+
+        @media screen and (max-width:960px) {
+            header img.header-social-icon {
+                margin-left: 12px
+            }
+
+            header ul li {
+                margin-left: 12px
+            }
+
+            .hide-lt-xlg {
+                display: none !important
+            }
+
+            .hide-lt-lg {
+                display: none !important
+            }
+
+            .hide-md {
+                display: none !important
+            }
+        }
+
+        @media screen and (max-width:800px) {
+            .modal-row {
+                padding-left: 2px
+            }
+
+            .sub-title {
+                font-size: 30px
+            }
+
+            .smaller {
+                padding-right: 30px
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            header nav {
+                max-width: 60px
+            }
+
+            ul li.dropdown ul {
+                right: 10px;
+                z-index: 1
+            }
+
+            .modal-row-top {
+                padding-left: 15px
+            }
+
+            #social-modal {
+                min-width: 300px
+            }
+
+            .smaller {
+                padding-right: 10px
+            }
+
+            dialog#signup-modal {
+                width: 365px
+            }
+
+            dialog#signup-modal form {
+                width: 90%;
+                margin: auto
+            }
+
+            dialog#login-modal form {
+                width: 100%;
+                margin: auto
+            }
+
+            dialog#subscription-modal form {
+                width: 400px;
+                margin: 10px
+            }
+
+            .thumbnail {
+                max-width: 90%;
+                margin: 12px
+            }
+
+            dialog .button {
+                width: 80%
+            }
+
+            dialog input[type=email] {
+                width: 90%
+            }
+
+            dialog input[type=text] {
+                width: 90%
+            }
+
+            dialog input[type=password] {
+                width: 90%
+            }
+
+            dialog .button.social-auth {
+                width: 80%;
+                display: block;
+                margin: auto;
+                margin-bottom: 10px;
+                text-align: left
+            }
+
+            .card-list .card-list-item {
+                margin: 4px 0
+            }
+
+            .card-list .card-list-item .card-content {
+                width: 87%
+            }
+
+            header img.deepai-logo {
+                height: 28px;
+                margin-left: 8px;
+                width: 32px;
+                object-fit: cover;
+                object-position: left
+            }
+
+            .show-lt-md {
+                display: block !important
+            }
+
+            .hide-lt-xlg {
+                display: none !important
+            }
+
+            .hide-lt-lg {
+                display: none !important
+            }
+
+            .hide-lt-md {
+                display: none !important
+            }
+
+            .hide-sm {
+                display: none !important
+            }
+        }
+
+        @media screen and (max-width:420px) {
+            .modal-core {
+                display: flex;
+                flex-direction: column;
+                margin: 10px;
+                align-items: center;
+                padding: 0px
+            }
+
+            .modal-column {
+                width: 280px
+            }
+
+            .other-modal-column {
+                width: 280px;
+                padding-bottom: 5%;
+                margin-bottom: 10px
+            }
+
+            .other-modal-column .other-box-title {
+                padding: 0.8em
+            }
+
+            .modal-column .box-title {
+                padding: 0.8em
+            }
+
+            .other-modal-column :nth-child(2) {
+                padding: 0.6em
+            }
+
+            .modal-row-top {
+                padding-left: 10px
+            }
+
+            .modal-column :nth-child(2) {
+                padding: 0.6em
+            }
+
+            .deepaiProPaymentRow {
+                display: flex;
+                flex-direction: column
+            }
+        }
+
+        @media screen and (max-width:375px) {
+
+            dialog#signup-modal form,
+            dialog#login-modal form {
+                width: 90%;
+                margin: auto
+            }
+
+            dialog input[type=email] {
+                width: 90%
+            }
+
+            dialog input[type=text] {
+                width: 90%
+            }
+
+            dialog input[type=password] {
+                width: 90%
+            }
+
+            dialog .button {
+                width: 90%
+            }
+
+            dialog .button.social-auth {
+                width: 90%
+            }
+
+            .title-image-pro {
+                width: 90%
+            }
+
+            .modal-row {
+                width: 90%
+            }
+        }
+
+        @media screen and (max-width:345px) {
+            .subscription-modal-body {
+                width: auto
+            }
+
+            .out-of-credits-modal-body {
+                width: auto
+            }
+
+            .subscription-pro {
+                width: 100%;
+                margin: auto
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            header nav {
+                max-width: 60px
+            }
+
+            ul li.dropdown ul {
+                right: 10px;
+                z-index: 1
+            }
+
+            #social-modal {
+                min-width: 300px
+            }
+
+            dialog#signup-modal form,
+            dialog#login-modal form {
+                width: 95%;
+                margin: auto
+            }
+
+            dialog#signup-modal {
+                width: 365px
+            }
+
+            dialog#subscription-modal form {
+                width: 400px;
+                margin: 10px
+            }
+
+            dialog .button {
+                width: 100%
+            }
+
+            dialog .button.social-auth {
+                width: 100%
+            }
+
+            .thumbnail {
+                max-width: 90%;
+                margin: 12px
+            }
+
+            .card-list .card-list-item .card-content {
+                width: 87%
+            }
+
+            .card-list .card-list-item {
+                margin: 4px 0
+            }
+
+            dialog .button.social-auth {
+                width: 100%;
+                display: block
+            }
+
+            .show-lt-md {
+                display: block !important
+            }
+
+            .hide-lt-xlg {
+                display: none !important
+            }
+
+            .hide-lt-lg {
+                display: none !important
+            }
+
+            .hide-lt-md {
+                display: none !important
+            }
+
+            .hide-xs {
+                display: none !important
+            }
+        }
+
+        body {
+            color: white
+        }
+
+        h1 {
+            text-align: center
+        }
+
+        .figure-name {
+            font-size: 0.8em;
+            font-weight: 500;
+            text-align: center
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 500;
+            text-align: center
+        }
+
+        h3 {
+            margin: 19px;
+            text-align: center;
+            width: calc(min(100vw - 45px, 841px));
+            margin-right: auto;
+            margin-left: auto
+        }
+
+        .figure {
+            width: 200px;
+            height: 266.6px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform .2s
+        }
+
+        .figure:hover {
+            transform: scale(1.2)
+        }
+
+        .captioned-figure {
+            display: inline-block
+        }
+
+        .fig-name {
+            margin: -5px
+        }
+
+        .idea-container {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            width: calc(min(100vw - 45px, 841px));
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .idea-container p {
+            padding: 8px 18px;
+            text-align: center
+        }
+
+        .idea-column {
+            display: inline-block;
+            width: 90%;
+            white-space: normal;
+            padding: 16px;
+            vertical-align: top;
+            margin: auto
+        }
+
+        .chatbox-wrapper {
+            width: calc(min(100vw - 45px, 867px));
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin-right: auto;
+            margin-left: auto
+        }
+
+        .chatbox {
+            width: calc(min(100vw - 45px, 841px));
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            resize: vertical;
+            background: #252525;
+            border-radius: 10px;
+            border: 1px solid rgb(118, 118, 118);
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            height: 187px;
+            margin-right: auto;
+            margin-left: auto;
+            overflow: auto;
+            justify-content: space-between
+        }
+
+        .outputBox {
+            width: calc(min(100vw - 45px, 841px));
+            display: block;
+            margin: 10px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid gray;
+            margin-right: auto;
+            margin-left: auto;
+            white-space: pre-wrap;
+            overflow-x: hidden
+        }
+
+        .editsBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: calc(min(100vw - 45px, 841px));
+            margin: auto
+        }
+
+        .chatoptionsBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            position: absolute;
+            bottom: 8%;
+            width: 98.6%
+        }
+
+        .optionsBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end
+        }
+
+        .copytextButton {
+            display: flex;
+            cursor: pointer;
+            border: none;
+            color: white;
+            background: transparent;
+            border: 1px dotted white;
+            border-radius: 6px
+        }
+
+        .summarizetextButton {
+            display: flex;
+            margin-left: 6px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            background: transparent;
+            border: 1px dotted white;
+            border-radius: 6px
+        }
+
+        .deleteBoxButton {
+            display: flex;
+            margin-left: 6px;
+            cursor: pointer;
+            border: 1px dotted white;
+            border-radius: 6px;
+            color: white;
+            background: transparent
+        }
+
+        .addBoxButton {
+            display: flex;
+            cursor: pointer;
+            border: 1px solid white;
+            border-radius: 6px;
+            color: #101010;
+            background: white
+        }
+
+        #copypopup {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px
+        }
+
+        #copypopup.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s
+        }
+
+        #summarypopup {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px
+        }
+
+        #summarypopup.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s
+        }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0
+            }
+        }
+
+        #progressContainer {
+            width: 100%;
+            height: 10px;
+            margin: 5px
+        }
+
+        #progressBar {
+            height: 10px;
+            background: #61b1ff;
+            border-radius: 10px;
+            width: 0%
+        }
+
+        #chatSubmitButton {
+            padding: 6px 19px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            vertical-align: bottom;
+            border: #d1A94a 2px solid;
+            white-space: nowrap;
+            color: white;
+            background: transparent;
+            cursor: pointer;
+            margin: 7px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 200px
+        }
+
+        #chatStopButton {
+            padding: 6px 19px;
+            font-size: 18px;
+            border-radius: 45px;
+            border: none;
+            vertical-align: bottom;
+            white-space: nowrap;
+            color: white;
+            background: #d1A94a;
+            cursor: pointer;
+            margin: 7px;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+            width: 200px
+        }
+
+        #chatRegenButton {
+            margin: 5px 0px;
+            color: #b5b5b5;
+            padding: 3px 9px;
+            border-radius: 7px;
+            cursor: pointer;
+            border: 1px solid #525252;
+            font-size: 12px;
+            background: transparent;
+            align-items: center;
+            display: none
+        }
+
+        #chatEditSubmitButton {
+            padding: 5px 19px;
+            font-size: 14px;
+            border-radius: 35px;
+            border: none;
+            vertical-align: bottom;
+            white-space: nowrap;
+            color: white;
+            background: #26A69A;
+            cursor: pointer;
+            margin: 7px;
+            display: block
+        }
+
+        #chatEditCancelButton {
+            padding: 5px 19px;
+            font-size: 14px;
+            border-radius: 35px;
+            border: 1px solid #b5b5b5;
+            vertical-align: bottom;
+            white-space: nowrap;
+            color: #b5b5b5;
+            background: transparent;
+            cursor: pointer;
+            margin: 7px;
+            display: block
+        }
+
+        #chatInfoIdeaButton {
+            color: #c764ec !important;
+            width: 80%;
+            display: block;
+            background: transparent;
+            padding: 10px;
+            text-align: center;
+            border-radius: 35px;
+            cursor: pointer;
+            border: 1px solid #c764ec;
+            margin: auto
+        }
+
+        #chatInfoStrengthButton {
+            color: #33FF6B !important;
+            width: 70%;
+            display: block;
+            background: transparent;
+            padding: 10px;
+            text-align: center;
+            border-radius: 35px;
+            cursor: pointer;
+            border: 1px solid #33FF6B;
+            margin: auto
+        }
+
+        #chatInfoWeaknessButton {
+            color: #FF4D25 !important;
+            width: 70%;
+            display: block;
+            background: transparent;
+            padding: 10px;
+            text-align: center;
+            border-radius: 35px;
+            cursor: pointer;
+            border: 1px solid #FF4D25;
+            margin: auto
+        }
+
+        #history-editing {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto
+        }
+
+        #history-rename {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            border-bottom: 1px dashed white;
+            padding: 10px;
+            margin-bottom: 10px
+        }
+
+        #chatSessionDeleteButton {
+            margin: 5px;
+            color: #FF4D25;
+            padding: 3px 17px;
+            border-radius: 45px;
+            cursor: pointer;
+            border: 1px solid #FF4D25;
+            font-size: 12px;
+            text-align: center;
+            background: transparent;
+            margin-top: 10px
+        }
+
+        #chatSessionRenameButton {
+            margin: 5px;
+            color: #c764ec;
+            padding: 3px 17px;
+            border-radius: 45px;
+            cursor: pointer;
+            border: 1px solid #c764ec;
+            font-size: 12px;
+            text-align: center;
+            background: transparent
+        }
+
+        #chatSessionEditing {
+            display: none;
+            margin: auto;
+            color: #1f78d1;
+            padding: 10px 17px;
+            cursor: pointer;
+            font-size: 12px;
+            text-align: center;
+            background: transparent;
+            text-decoration: underline;
+            border: none
+        }
+
+        .response-length-options {
+            margin-left: auto;
+            display: flex;
+            justify-content: center;
+            width: fit-content;
+            margin-right: auto;
+            align-items: center
+        }
+
+        .response-length-options input[type=radio] {
+            margin: 0px;
+            width: 0px
+        }
+
+        .response-length-options label {
+            margin: 5px;
+            color: #b5b5b5;
+            padding: 6px 10px;
+            border-radius: 7px;
+            cursor: pointer;
+            border: 1px solid #525252;
+            font-size: 12px;
+            user-select: none;
+            -webkit-user-select: none
+        }
+
+        .response-length-options input[type=radio]:checked+label {
+            background-color: #1f77d1;
+            color: white
+        }
+
+        .other-chat-styles {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 10px;
+            flex-wrap: wrap;
+            width: calc(min(100vw - 45px, 841px));
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .other-chat-styles a {
+            margin: 5px;
+            color: #26A69A;
+            padding: 3px 17px;
+            border-radius: 45px;
+            cursor: pointer;
+            border: 1px solid #26A69A;
+            font-size: 12px;
+            text-align: center
+        }
+
+        .characters-chat-link {
+            width: fit-content;
+            margin: 5px;
+            color: #00ff6e;
+            padding: 3px 17px;
+            border-radius: 45px;
+            cursor: pointer;
+            border: 2px solid #00ea1c;
+            font-size: 15px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            display: block
+        }
+
+        .chat-dropdown-box {
+            display: none;
+            font-size: 16px;
+            margin: auto;
+            color: white;
+            background: #101010;
+            border: 1px solid silver;
+            border-radius: 5px;
+            padding: 10px;
+            max-width: 89vw
+        }
+
+        @media screen and (max-width:915px) {
+            .chatbox-wrapper {
+                width: 100%
+            }
+
+            .chatoptionsBox {
+                width: 96.1%
+            }
+        }
+
+        @media screen and (max-width:890px) {
+            .chatoptionsBox {
+                width: 97.5%
+            }
+        }
+
+        @media screen and (max-width:800px) {
+            .idea-container {
+                width: 100%
+            }
+
+            .chatoptionsBox {
+                width: 97.1%
+            }
+        }
+
+        @media screen and (max-width:750px) {
+            .chatoptionsBox {
+                width: 96.9%
+            }
+        }
+
+        @media screen and (max-width:700px) {
+            .chatoptionsBox {
+                width: 96.6%
+            }
+        }
+
+        @media screen and (max-width:650px) {
+            .idea-container {
+                flex-direction: column
+            }
+
+            .idea-column {
+                width: 60%
+            }
+
+            #copypopup {
+                left: 46%
+            }
+
+            .chatoptionsBox {
+                width: 96.1%
+            }
+        }
+
+        @media screen and (max-width:550px) {
+            .chatoptionsBox {
+                width: 95.7%
+            }
+        }
+
+        @media screen and (max-width:500px) {
+            .idea-column {
+                width: 70%
+            }
+
+            .other-chat-styles {
+                flex-direction: column;
+                margin: auto;
+                max-width: 40%
+            }
+
+            .chatoptionsBox {
+                width: 95.1%
+            }
+        }
+
+        @media screen and (max-width:475px) {
+            .chatSubmitButton {
+                width: 170px
+            }
+
+            .response-length-options {
+                flex-direction: column-reverse
+            }
+        }
+
+        @media screen and (max-width:460px) {
+            #history-rename {
+                flex-direction: column
+            }
+        }
+
+        @media screen and (max-width:450px) {
+            .chatoptionsBox {
+                width: 94.4%
+            }
+        }
+
+        @media screen and (max-width:380px) {
+            .idea-column {
+                width: 85%
+            }
+
+            .other-chat-styles {
+                flex-direction: column;
+                margin: auto;
+                max-width: 60%
+            }
+
+            #copypopup {
+                left: 45%
+            }
+
+            .chatoptionsBox {
+                width: 93.6%
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            .chatoptionsBox {
+                width: 92.1%
+            }
+        }
+
+        @media screen and (max-width:260px) {
+            .chatoptionsBox {
+                width: 91%
+            }
+        }
+
+        .amazon-advertisement-container {
+            display: flex;
+            justify-content: center;
+            max-width: 100%;
+            flex-direction: column
+        }
+
+        .inner-amazon-advertisement-container {
+            height: 33%;
+            border: 5px solid #1a1a1a;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: bottom;
+            justify-content: center;
+            background: white
+        }
+
+        .inner-amazon-advertisement-container img {
+            height: auto;
+            object-fit: contain;
+            max-height: 100px;
+            max-width: 100px
+        }
+
+        .amazon-ad-image-box {
+            width: 33%
+        }
+
+        .inner-amazon-advertisement-container-info {
+            height: 100%;
+            justify-content: center;
+            display: inherit
+        }
+
+        .amazon-ad-text-container {
+            width: 67%;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            flex-direction: column;
+            overflow: hidden;
+            margin-left: 20px
+        }
+
+        .amazon-ad-text-container p {
+            margin-bottom: 0px
+        }
+
+        .amazon-ad-stat-box {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around
+        }
+
+        .amazon-star-rating {
+            height: 20px;
+            margin: 10px;
+            margin-bottom: 0
+        }
+
+        .amazon-advert-price {
+            margin: 10px;
+            margin-bottom: 0;
+            color: #B63419;
+            height: 20px
+        }
+
+        .amazon-ad-prime {
+            display: flex;
+            align-self: end;
+            margin: 10px;
+            margin-bottom: 0;
+            height: 20px
+        }
+
+        .amazon-ad-scroll-container {
+            width: 100%;
+            height: auto;
+            overflow: auto
+        }
+
+        .amazon-ad-overall-container {
+            display: flex;
+            flex-direction: row
+        }
+    </style>
+</head>
+
+<body>
+    <header style="text-align: center;width: 100vw;">
+        <p style="color: #d1A94a;font-size: 30px;margin-left: auto;margin-right: auto;">Welcome to AssistantGPT</p>
+    </header>
+
+    <p style="font-size: 20px;color:white; font-weight: lighter; margin-left: 15%;margin-right: 15%;text-align: center;"><span
+            style="color: #d1A94a;">AsistantGPT🤖&nbsp;</span> is an AI chatbot. You can use it for research ,coding , chatting,
+        or overall general day to day activites that require text generation.</p>
+
+    </p>
+
+        <select class="chat-dropdown-box" id="chat-dropdown-box-id">
+        </select>
+        <button id="chatSessionEditing" type="button" onclick="showChatHistoryEditing()">Edit chat history</button>
+    <div class="chatbox-wrapper" style="border-color: grey;" id="chatboxWrapperId_0" onkeypress="textAreaKeyPressHandler(event)">
+        <textarea class="chatbox" rows="10" cols="50"></textarea>
+    </div>
+    <div id="copypopup">Copied!</div>
+    <div id="summarypopup">Summarizing!</div>
+    <div style="align-content: center;align-items: center;text-align: center;margin-left: 20%;width: 50vw;margin-right: 20%;" id="progressContainer">
+        <div style="background-color: #d1A94a;" id="progressBar"> </div>
+    </div>
+
+    <!-- Show radio button group with 3 response length options: short, medium, long. Default to short -->
+  
+    <div class="response-length-options">
+        <button  id="chatSubmitButton" type="button" onclick="chatSubmit()">Go</button>
+        <button id="chatStopButton" type="button" onclick="chatStop()">Stop</button>
+        <!--  Checkbox to enable genius mode -->
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="genius" name="genius" value="genius"
+                    style="margin-left: 13px;background-color: transparent;display: hidden;" onChange="geniusToggled()"
+                    locked="true">
+            </div>
+            <button id="chatRegenButton" type="button" onclick="chatReSubmit()">
+                <p style="font-size: 16px; margin: 0px 5px 0px 0px;">↻</p> Regenerate response
+            </button>
+        </div>
+    </div>
+
+    <dialog id="signup-modal">
+        <div class="modal-body">
+            <p class="title">Sign up for DeepAI</p>
+            <!--                <p class="subtitle">Join one of the world's largest A.I. communities</p>-->
+            <form style="text-align:center">
+                <span style="display:none" id="moreSignupOptions">
+
+                    <input id="user-email" type="email" placeholder="email *">
+                    <input id="user-password" type="password" placeholder="password *">
+                    <input id="confirm-user-password" type="password" placeholder="confirm password *">
+                    <button class="button" onclick="signup(event)">Sign up</button>
+                    <div class="other-options-signup-row">
+                        <div class="other-options-signup-line"></div>
+                        <div class="other-options-signup" style="display:inline-block;"> <small>OR</small> </div>
+                        <div class="other-options-signup-line"></div>
+                    </div>
+                    <!--                      <button class="button social-auth" onclick="social_signup(event, 'twitter')"><img src="/static/images/twitter-icon.png"><span class="middle">Signup with Twitter</span></button>-->
+                    <button class="button social-auth" onclick="social_signup(event, 'github')"><img
+                            src="/static/images/github-icon.png"><span class="middle">Signup with GitHub</span></button>
+                    <button class="button social-auth" onclick="social_signup(event, 'linkedin')"><img
+                            src="/static/images/linkedin-icon.png"><span class="middle">Signup with
+                            LinkedIn</span></button>
+                </span>
+                <button class="button social-auth" onclick="social_signup(event, 'google')"><img
+                        src="/static/images/google-icon.png"><span class="middle">Signup with Google</span></button>
+
+                <p id="user-email-error" class="hide"></p>
+                <p id="user-password-error" class="hide"></p>
+
+                <button class="button more-options"
+                    onclick="document.getElementById('moreSignupOptions').style.display='inline'; this.remove(); return false">more
+                    signup options</button>
+
+
+                <p class="subtitle">Already have an account? <a href="javascript:void();"
+                        style="color: #c764ec; text-decoration: underline;" onclick="signupSwitchToLogin(event)"> Login
+                        here</a></p>
+            </form>
+        </div>
+        <button id="close" class="close" type="button">&times;</button>
+    </dialog>
+    <dialog id="login-modal">
+        <div class="modal-body">
+            <p class="title">Login to DeepAI</p>
+            <p class="subtitle"></p>
+            <form style="text-align:center">
+                <span style="display:none" id="moreLoginOptions">
+                    <input id="login-user-email" type="email" placeholder="email">
+                    <p id="login-user-email-error" class="hide"></p>
+                    <input id="login-user-password" type="password" placeholder="password">
+                    <p id="login-user-password-error" class="hide"></p>
+                    <button class="button" onclick="login(event)">Login</button>
+                    <p class="subtitle">Forgot password? <a href="javascript:void();"
+                            style="color: #3a90e0; text-decoration: underline;" onclick="resetPassword(event)">Click
+                            here</a></p>
+                    <!--                      <button class="button social-auth" onclick="social_login(event, 'twitter')"><img src="/static/images/twitter-icon.png"><span class="middle">Login with Twitter</span></button>-->
+                    <button class="button social-auth" onclick="social_login(event, 'github')"><img
+                            src="/static/images/github-icon.png"><span class="middle">Login with GitHub</span></button>
+                    <button class="button social-auth" onclick="social_login(event, 'linkedin')"><img
+                            src="/static/images/linkedin-icon.png"><span class="middle">Login with
+                            LinkedIn</span></button>
+                </span>
+                <button class="button social-auth" onclick="social_login(event, 'google')"><img
+                        src="/static/images/google-icon.png"><span class="middle">Login with Google</span></button>
+                <button class="button more-options"
+                    onclick="document.getElementById('moreLoginOptions').style.display='inline'; this.remove(); return false">more
+                    login options</button>
+
+
+                <p class="subtitle">Don't have an account? <a href="javascript:void();"
+                        style="color: #c764ec; text-decoration: underline;" onclick="loginSwitchToSignup(event)"> Signup
+                        here</a></p>
+            </form>
+        </div>
+        <button id="close-login" class="close" type="button">&times;</button>
+    </dialog>
+    <dialog id="subscription-modal">
+        <div class="modal-body subscription-modal-body">
+            <div id="subscription-pro-id" class="subscription-pro">
+                <div class="title-image-pro">
+                    <p class="title">Become a DeepAI <small>PRO</small></p>
+                    <img class="logo-imagepro" src="/static/images/prologo.jpg" />
+                </div>
+                <div class="modal-row">
+                    <div class="sub-title">$4.99/mo</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">500 AI generator calls per month + $5 per 500 more (includes images)</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">1750 AI Chat messages per month + $5 per 1750 more</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">60 Genius Mode messages per month + $5 per 60 more</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">Private image generation</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">Complete styles library</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">API access</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">Ad-free experience</div>
+                </div>
+                <div class="modal-row">
+                    <div class="sub-info purple">*</div>
+                    <div class="sub-info smaller">This is a recurring payment that will happen monthly</div>
+                </div>
+                <div class="modal-row">
+                    <div class="sub-info purple">*</div>
+                    <div class="sub-info smaller">If you exceed number of images or messages listed, they will be
+                        charged at a rate of $5</div>
+                </div>
+                <div id="deepaiProSubscriptionRow" class="deepaiProSubscriptionRow">
+                    <button onclick="window.open(deepaiProLinkUrl, '_blank')"
+                        class="stripe-signup-button">Subscribe</button>
+                    <div id="paypal-button-container-P-9LT69365YG9885149MPMFULA"></div>
+                    <script
+                        src="https://www.paypal.com/sdk/js?client-id=AYo4E41BoY_tpXUXuZ-5rclkCZATIojkd25Aym1lY7PBVTltF5NRLSmMK8bFWPnyL9iB5wLyaIW9kV-O&vault=true&intent=subscription"
+                        data-sdk-integration-source="button-factory" data-namespace="paypal_subscriptions"></script>
+                    <script>
+                        paypal_subscriptions.Buttons({
+                            fundingSource: paypal_subscriptions.FUNDING.PAYPAL,
+                            style: {
+                                shape: 'pill',
+                                color: 'gold',
+                                layout: 'vertical',
+                                label: 'subscribe',
+                                height: 40,
+                            },
+                            createSubscription: function (data, actions) {
+                                return actions.subscription.create({
+                                    /* Creates the subscription */
+                                    plan_id: 'P-9LT69365YG9885149MPMFULA'
+                                });
+                            },
+                            onApprove: async function (data, actions) {
+                                // alert(data.subscriptionID); // You can add optional success message for the subscriber here
+
+                                // Successful capture! For dev/demo purposes:
+                                const subID = data.subscriptionID;
+                                const element = document.getElementById('paypal-button-container-P-9LT69365YG9885149MPMFULA');
+                                element.innerHTML = '<h3>Thank you for subscribing!</h3>';
+
+                                var formData = new FormData();
+                                formData.append("subID", subID);
+
+                                const response = await fetch(app_base_url + "/save_paypal_subscription", {
+                                    method: 'POST',
+                                    credentials: 'include',
+                                    body: formData
+                                });
+
+                                // window.location.reload();
+                                // Or go to another URL:  actions.redirect('thank_you.html');
+                                if (typeof subscription_modal !== 'undefined') {
+                                    subscription_modal.close('cancelled');
+                                }
+
+                            }
+                        }).render('#paypal-button-container-P-9LT69365YG9885149MPMFULA'); // Renders the PayPal button
+                    </script>
+
+
+
+                </div>
+                <div id="deepaiProSignupRow" class="deepaiProSignupRow">
+                    <button class="button" onclick="openSignup(openSubscription)">Sign up</button>
+                </div>
+                <button class="switch-pay-button" onclick="changePaySub()"> No thanks, I'll do a one time payment
+                </button>
+            </div>
+            <div id="payasyougo-id" class="payasyougo">
+                <div class="title-image-pro">
+                    <p class="title">Pay as you go</p>
+                </div>
+                <div class="modal-row-top">
+                    <div class="sub-title">Starting at $5 for</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">100 AI Generator Calls (includes images)</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">350 AI Chat messages</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/redcheck.jpg" />
+                    <div class="sub-info">Does not include Genius Mode</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">Private image generation</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">Complete styles library</div>
+                </div>
+                <!--                    <div class="modal-row">-->
+                <!--                        <img class="check-imagepro" src="/static/images/greencheck.jpg" />-->
+                <!--                        <div class="sub-info">Custom image sizes</div>-->
+                <!--                    </div>-->
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">API access</div>
+                </div>
+                <div class="modal-row">
+                    <img class="check-imagepro" src="/static/images/greencheck.jpg" />
+                    <div class="sub-info">Ad-free experience</div>
+                </div>
+                <div id="otherdeepaiProSignupRow" class="deepaiProSignupRow">
+                    <button class="button" onclick="openSignup(openSubscription)">Sign up</button>
+                </div>
+                <div id="otherdeepaiProPaymentRow" class="deepaiProPaymentRow">
+                    <select id="addCreditsAmountSelect" style="font-size: 19px;
+                            border-radius: 115px;
+                            color: #ffffffde;
+                            background: #3f8653;
+                            padding: 5px;
+                            margin: 1px;
+                            box-shadow: 0 1px 3px 0 #3a3c3fad;
+                            opacity: 1;
+                            border: none;
+                            margin-bottom: 10px;
+                            height: 40px;">
+                        <option value="5">$5 USD</option>
+                        <option value="10">$10 USD</option>
+                        <option value="20">$20 USD</option>
+                        <option value="50">$50 USD</option>
+                        <option value="100">$100 USD</option>
+                        <option value="200">$200 USD</option>
+                        <option value="500">$500 USD</option>
+                        <option value="1000">$1000 USD</option>
+                    </select>
+                    <button onclick="window.open(deepaiAddCreditsLinkUrl, '_blank')" class="stripe-signup-button">Add
+                        Credits</button>
+
+                    <!-- Replace "test" with your own sandbox Business account app client ID -->
+                    <script
+                        src="https://www.paypal.com/sdk/js?currency=USD&client-id=AYo4E41BoY_tpXUXuZ-5rclkCZATIojkd25Aym1lY7PBVTltF5NRLSmMK8bFWPnyL9iB5wLyaIW9kV-O"
+                        data-namespace="paypal_one_time"></script>
+                    <!-- Set up a container element for the button -->
+                    <div id="paypal-button-container"
+                        style="    margin: 0px;max-width: 200px;  height: 42px;   display: inline-block; margin-bottom: 10px;">
+                    </div>
+                </div>
+                <button class="switch-pay-button" onclick="changePaySub()"> Nevermind, I want to become
+                    <small>PRO</small> </button>
+            </div>
+            <script>
+
+                paypal_one_time.Buttons({
+                    // Sets up the transaction when a payment button is clicked
+                    fundingSource: paypal_one_time.FUNDING.PAYPAL,
+                    style: {
+                        shape: 'pill',
+                        height: 40,
+                    },
+
+                    createOrder: (data, actions) => {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: document.getElementById('addCreditsAmountSelect').value
+                                }
+                            }],
+                            application_context: { shipping_preference: 'NO_SHIPPING' }
+                        });
+                    },
+                    // Finalize the transaction after payer approval
+                    onApprove: (data, actions) => {
+                        return actions.order.capture().then(async function (orderData) {
+                            // Successful capture! For dev/demo purposes:
+                            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                            const transaction = orderData.purchase_units[0].payments.captures[0];
+                            // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+                            // When ready to go live, remove the alert and show a success message within this page. For example:
+                            const element = document.getElementById('paypal-button-container');
+                            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+                            var formData = new FormData();
+                            formData.append("capture_id", orderData.purchase_units[0].payments.captures[0].id);
+
+                            const response = await fetch(app_base_url + "/save_paypal_payment", {
+                                method: 'POST',
+                                credentials: 'include',
+                                body: formData
+                            });
+
+                            // window.location.reload();
+                            // Or go to another URL:  actions.redirect('thank_you.html');
+                            if (typeof subscription_modal !== 'undefined') {
+                                subscription_modal.close('cancelled');
+                            }
+                        });
+                    }
+                }).render('#paypal-button-container');
+
+                // add message handler: save_paypal_payment
+                window.addEventListener('message', function (event) {
+                    if (event.data.type === 'save_paypal_payment') {
+                        // get the capture id from the event data
+                        const capture_id = event.data.capture_id;
+
+                    }
+                });
+            </script>
+
+
+        </div>
+        <button id="close-sub" class="close" type="button">&times;</button>
+    </dialog>
+    <dialog id="out-of-credits-modal">
+        <div class="modal-body out-of-credits-modal-body">
+            <div>
+               
+            </div>
+
+        </div>
+        <button id="close-out-of-credits" class="close" type="button">&times;</button>
+    </dialog>
+    <dialog id="social-modal">
+        <div class="modal-body">
+            <div id="social-image" class="thumbnail"></div>
+            <p class="title">SHARE<br><b id="share_title"></b></p>
+            <p class="subtitle"></p>
+            <div class="social-container">
+                <a id="tw-link" target="_blank">
+                    <img src="/static/images/twitter-icon-medium.png">
+                </a>
+                <a id="lkdin-link" target="_blank">
+                    <img src="/static/images/linkedin-icon-medium.png">
+                </a>
+                <a id="fb-link" target="_blank">
+                    <img src="/static/images/facebook-icon.png">
+                </a>
+            </div>
+                           
+        </div>
+        <button id="close-social" class="close" type="button">&times;</button>
+    </dialog>
+
+
+    <script>var $jscomp = $jscomp || {}; $jscomp.scope = {}; $jscomp.createTemplateTagFirstArg = function (a) { return a.raw = a }; $jscomp.createTemplateTagFirstArgWithRaw = function (a, b) { a.raw = b; return a }; $jscomp.arrayIteratorImpl = function (a) { var b = 0; return function () { return b < a.length ? { done: !1, value: a[b++] } : { done: !0 } } }; $jscomp.arrayIterator = function (a) { return { next: $jscomp.arrayIteratorImpl(a) } }; $jscomp.makeIterator = function (a) { var b = "undefined" != typeof Symbol && Symbol.iterator && a[Symbol.iterator]; return b ? b.call(a) : $jscomp.arrayIterator(a) }; $jscomp.arrayFromIterator = function (a) { for (var b, c = []; !(b = a.next()).done;)c.push(b.value); return c }; $jscomp.arrayFromIterable = function (a) { return a instanceof Array ? a : $jscomp.arrayFromIterator($jscomp.makeIterator(a)) }; $jscomp.ASSUME_ES5 = !1; $jscomp.ASSUME_NO_NATIVE_MAP = !1; $jscomp.ASSUME_NO_NATIVE_SET = !1; $jscomp.SIMPLE_FROUND_POLYFILL = !1; $jscomp.ISOLATE_POLYFILLS = !1; $jscomp.FORCE_POLYFILL_PROMISE = !1; $jscomp.FORCE_POLYFILL_PROMISE_WHEN_NO_UNHANDLED_REJECTION = !1; $jscomp.defineProperty = $jscomp.ASSUME_ES5 || "function" == typeof Object.defineProperties ? Object.defineProperty : function (a, b, c) { if (a == Array.prototype || a == Object.prototype) return a; a[b] = c.value; return a }; $jscomp.getGlobal = function (a) { a = ["object" == typeof globalThis && globalThis, a, "object" == typeof window && window, "object" == typeof self && self, "object" == typeof global && global]; for (var b = 0; b < a.length; ++b) { var c = a[b]; if (c && c.Math == Math) return c } throw Error("Cannot find global object"); }; $jscomp.global = $jscomp.getGlobal(this); $jscomp.IS_SYMBOL_NATIVE = "function" === typeof Symbol && "symbol" === typeof Symbol("x"); $jscomp.TRUST_ES6_POLYFILLS = !$jscomp.ISOLATE_POLYFILLS || $jscomp.IS_SYMBOL_NATIVE; $jscomp.polyfills = {}; $jscomp.propertyToPolyfillSymbol = {}; $jscomp.POLYFILL_PREFIX = "$jscp$"; var $jscomp$lookupPolyfilledValue = function (a, b) { var c = $jscomp.propertyToPolyfillSymbol[b]; if (null == c) return a[b]; c = a[c]; return void 0 !== c ? c : a[b] }; $jscomp.polyfill = function (a, b, c, d) { b && ($jscomp.ISOLATE_POLYFILLS ? $jscomp.polyfillIsolated(a, b, c, d) : $jscomp.polyfillUnisolated(a, b, c, d)) }; $jscomp.polyfillUnisolated = function (a, b, c, d) { c = $jscomp.global; a = a.split("."); for (d = 0; d < a.length - 1; d++) { var e = a[d]; if (!(e in c)) return; c = c[e] } a = a[a.length - 1]; d = c[a]; b = b(d); b != d && null != b && $jscomp.defineProperty(c, a, { configurable: !0, writable: !0, value: b }) }; $jscomp.polyfillIsolated = function (a, b, c, d) { var e = a.split("."); a = 1 === e.length; d = e[0]; d = !a && d in $jscomp.polyfills ? $jscomp.polyfills : $jscomp.global; for (var h = 0; h < e.length - 1; h++) { var f = e[h]; if (!(f in d)) return; d = d[f] } e = e[e.length - 1]; c = $jscomp.IS_SYMBOL_NATIVE && "es6" === c ? d[e] : null; b = b(c); null != b && (a ? $jscomp.defineProperty($jscomp.polyfills, e, { configurable: !0, writable: !0, value: b }) : b !== c && (void 0 === $jscomp.propertyToPolyfillSymbol[e] && (c = 1E9 * Math.random() >>> 0, $jscomp.propertyToPolyfillSymbol[e] = $jscomp.IS_SYMBOL_NATIVE ? $jscomp.global.Symbol(e) : $jscomp.POLYFILL_PREFIX + c + "$" + e), $jscomp.defineProperty(d, $jscomp.propertyToPolyfillSymbol[e], { configurable: !0, writable: !0, value: b }))) }; $jscomp.underscoreProtoCanBeSet = function () { var a = { a: !0 }, b = {}; try { return b.__proto__ = a, b.a } catch (c) { } return !1 }; $jscomp.setPrototypeOf = $jscomp.TRUST_ES6_POLYFILLS && "function" == typeof Object.setPrototypeOf ? Object.setPrototypeOf : $jscomp.underscoreProtoCanBeSet() ? function (a, b) { a.__proto__ = b; if (a.__proto__ !== b) throw new TypeError(a + " is not extensible"); return a } : null; $jscomp.generator = {}; $jscomp.generator.ensureIteratorResultIsObject_ = function (a) { if (!(a instanceof Object)) throw new TypeError("Iterator result " + a + " is not an object"); }; $jscomp.generator.Context = function () { this.isRunning_ = !1; this.yieldAllIterator_ = null; this.yieldResult = void 0; this.nextAddress = 1; this.finallyAddress_ = this.catchAddress_ = 0; this.finallyContexts_ = this.abruptCompletion_ = null }; $jscomp.generator.Context.prototype.start_ = function () { if (this.isRunning_) throw new TypeError("Generator is already running"); this.isRunning_ = !0 }; $jscomp.generator.Context.prototype.stop_ = function () { this.isRunning_ = !1 }; $jscomp.generator.Context.prototype.jumpToErrorHandler_ = function () { this.nextAddress = this.catchAddress_ || this.finallyAddress_ }; $jscomp.generator.Context.prototype.next_ = function (a) { this.yieldResult = a }; $jscomp.generator.Context.prototype.throw_ = function (a) { this.abruptCompletion_ = { exception: a, isException: !0 }; this.jumpToErrorHandler_() }; $jscomp.generator.Context.prototype.return = function (a) { this.abruptCompletion_ = { return: a }; this.nextAddress = this.finallyAddress_ }; $jscomp.generator.Context.prototype.jumpThroughFinallyBlocks = function (a) { this.abruptCompletion_ = { jumpTo: a }; this.nextAddress = this.finallyAddress_ }; $jscomp.generator.Context.prototype.yield = function (a, b) { this.nextAddress = b; return { value: a } }; $jscomp.generator.Context.prototype.yieldAll = function (a, b) { a = $jscomp.makeIterator(a); var c = a.next(); $jscomp.generator.ensureIteratorResultIsObject_(c); if (c.done) this.yieldResult = c.value, this.nextAddress = b; else return this.yieldAllIterator_ = a, this.yield(c.value, b) }; $jscomp.generator.Context.prototype.jumpTo = function (a) { this.nextAddress = a }; $jscomp.generator.Context.prototype.jumpToEnd = function () { this.nextAddress = 0 }; $jscomp.generator.Context.prototype.setCatchFinallyBlocks = function (a, b) { this.catchAddress_ = a; void 0 != b && (this.finallyAddress_ = b) }; $jscomp.generator.Context.prototype.setFinallyBlock = function (a) { this.catchAddress_ = 0; this.finallyAddress_ = a || 0 }; $jscomp.generator.Context.prototype.leaveTryBlock = function (a, b) { this.nextAddress = a; this.catchAddress_ = b || 0 }; $jscomp.generator.Context.prototype.enterCatchBlock = function (a) { this.catchAddress_ = a || 0; a = this.abruptCompletion_.exception; this.abruptCompletion_ = null; return a }; $jscomp.generator.Context.prototype.enterFinallyBlock = function (a, b, c) { c ? this.finallyContexts_[c] = this.abruptCompletion_ : this.finallyContexts_ = [this.abruptCompletion_]; this.catchAddress_ = a || 0; this.finallyAddress_ = b || 0 }; $jscomp.generator.Context.prototype.leaveFinallyBlock = function (a, b) { b = this.finallyContexts_.splice(b || 0)[0]; if (b = this.abruptCompletion_ = this.abruptCompletion_ || b) { if (b.isException) return this.jumpToErrorHandler_(); void 0 != b.jumpTo && this.finallyAddress_ < b.jumpTo ? (this.nextAddress = b.jumpTo, this.abruptCompletion_ = null) : this.nextAddress = this.finallyAddress_ } else this.nextAddress = a }; $jscomp.generator.Context.prototype.forIn = function (a) { return new $jscomp.generator.Context.PropertyIterator(a) }; $jscomp.generator.Context.PropertyIterator = function (a) { this.object_ = a; this.properties_ = []; for (var b in a) this.properties_.push(b); this.properties_.reverse() }; $jscomp.generator.Context.PropertyIterator.prototype.getNext = function () { for (; 0 < this.properties_.length;) { var a = this.properties_.pop(); if (a in this.object_) return a } return null }; $jscomp.generator.Engine_ = function (a) { this.context_ = new $jscomp.generator.Context; this.program_ = a }; $jscomp.generator.Engine_.prototype.next_ = function (a) { this.context_.start_(); if (this.context_.yieldAllIterator_) return this.yieldAllStep_(this.context_.yieldAllIterator_.next, a, this.context_.next_); this.context_.next_(a); return this.nextStep_() }; $jscomp.generator.Engine_.prototype.return_ = function (a) { this.context_.start_(); var b = this.context_.yieldAllIterator_; if (b) return this.yieldAllStep_("return" in b ? b["return"] : function (c) { return { value: c, done: !0 } }, a, this.context_.return); this.context_.return(a); return this.nextStep_() }; $jscomp.generator.Engine_.prototype.throw_ = function (a) { this.context_.start_(); if (this.context_.yieldAllIterator_) return this.yieldAllStep_(this.context_.yieldAllIterator_["throw"], a, this.context_.next_); this.context_.throw_(a); return this.nextStep_() }; $jscomp.generator.Engine_.prototype.yieldAllStep_ = function (a, b, c) { try { var d = a.call(this.context_.yieldAllIterator_, b); $jscomp.generator.ensureIteratorResultIsObject_(d); if (!d.done) return this.context_.stop_(), d; var e = d.value } catch (h) { return this.context_.yieldAllIterator_ = null, this.context_.throw_(h), this.nextStep_() } this.context_.yieldAllIterator_ = null; c.call(this.context_, e); return this.nextStep_() }; $jscomp.generator.Engine_.prototype.nextStep_ = function () { for (; this.context_.nextAddress;)try { var a = this.program_(this.context_); if (a) return this.context_.stop_(), { value: a.value, done: !1 } } catch (b) { this.context_.yieldResult = void 0, this.context_.throw_(b) } this.context_.stop_(); if (this.context_.abruptCompletion_) { a = this.context_.abruptCompletion_; this.context_.abruptCompletion_ = null; if (a.isException) throw a.exception; return { value: a.return, done: !0 } } return { value: void 0, done: !0 } }; $jscomp.generator.Generator_ = function (a) { this.next = function (b) { return a.next_(b) }; this.throw = function (b) { return a.throw_(b) }; this.return = function (b) { return a.return_(b) }; this[Symbol.iterator] = function () { return this } }; $jscomp.generator.createGenerator = function (a, b) { b = new $jscomp.generator.Generator_(new $jscomp.generator.Engine_(b)); $jscomp.setPrototypeOf && a.prototype && $jscomp.setPrototypeOf(b, a.prototype); return b }; $jscomp.asyncExecutePromiseGenerator = function (a) { function b(d) { return a.next(d) } function c(d) { return a.throw(d) } return new Promise(function (d, e) { function h(f) { f.done ? d(f.value) : Promise.resolve(f.value).then(b, c).then(h, e) } h(a.next()) }) }; $jscomp.asyncExecutePromiseGeneratorFunction = function (a) { return $jscomp.asyncExecutePromiseGenerator(a()) }; $jscomp.asyncExecutePromiseGeneratorProgram = function (a) { return $jscomp.asyncExecutePromiseGenerator(new $jscomp.generator.Generator_(new $jscomp.generator.Engine_(a))) }; $jscomp.initSymbol = function () { }; $jscomp.polyfill("Symbol", function (a) { if (a) return a; var b = function (h, f) { this.$jscomp$symbol$id_ = h; $jscomp.defineProperty(this, "description", { configurable: !0, writable: !0, value: f }) }; b.prototype.toString = function () { return this.$jscomp$symbol$id_ }; var c = "jscomp_symbol_" + (1E9 * Math.random() >>> 0) + "_", d = 0, e = function (h) { if (this instanceof e) throw new TypeError("Symbol is not a constructor"); return new b(c + (h || "") + "_" + d++, h) }; return e }, "es6", "es3"); $jscomp.polyfill("Symbol.iterator", function (a) { if (a) return a; a = Symbol("Symbol.iterator"); for (var b = "Array Int8Array Uint8Array Uint8ClampedArray Int16Array Uint16Array Int32Array Uint32Array Float32Array Float64Array".split(" "), c = 0; c < b.length; c++) { var d = $jscomp.global[b[c]]; "function" === typeof d && "function" != typeof d.prototype[a] && $jscomp.defineProperty(d.prototype, a, { configurable: !0, writable: !0, value: function () { return $jscomp.iteratorPrototype($jscomp.arrayIteratorImpl(this)) } }) } return a }, "es6", "es3"); $jscomp.iteratorPrototype = function (a) { a = { next: a }; a[Symbol.iterator] = function () { return this }; return a }; $jscomp.polyfill("Promise", function (a) { function b() { this.batch_ = null } function c(f) { return f instanceof e ? f : new e(function (l, g) { l(f) }) } if (a && (!($jscomp.FORCE_POLYFILL_PROMISE || $jscomp.FORCE_POLYFILL_PROMISE_WHEN_NO_UNHANDLED_REJECTION && "undefined" === typeof $jscomp.global.PromiseRejectionEvent) || !$jscomp.global.Promise || -1 === $jscomp.global.Promise.toString().indexOf("[native code]"))) return a; b.prototype.asyncExecute = function (f) { if (null == this.batch_) { this.batch_ = []; var l = this; this.asyncExecuteFunction(function () { l.executeBatch_() }) } this.batch_.push(f) }; var d = $jscomp.global.setTimeout; b.prototype.asyncExecuteFunction = function (f) { d(f, 0) }; b.prototype.executeBatch_ = function () { for (; this.batch_ && this.batch_.length;) { var f = this.batch_; this.batch_ = []; for (var l = 0; l < f.length; ++l) { var g = f[l]; f[l] = null; try { g() } catch (k) { this.asyncThrow_(k) } } } this.batch_ = null }; b.prototype.asyncThrow_ = function (f) { this.asyncExecuteFunction(function () { throw f; }) }; var e = function (f) { this.state_ = 0; this.result_ = void 0; this.onSettledCallbacks_ = []; this.isRejectionHandled_ = !1; var l = this.createResolveAndReject_(); try { f(l.resolve, l.reject) } catch (g) { l.reject(g) } }; e.prototype.createResolveAndReject_ = function () { function f(k) { return function (m) { g || (g = !0, k.call(l, m)) } } var l = this, g = !1; return { resolve: f(this.resolveTo_), reject: f(this.reject_) } }; e.prototype.resolveTo_ = function (f) { if (f === this) this.reject_(new TypeError("A Promise cannot resolve to itself")); else if (f instanceof e) this.settleSameAsPromise_(f); else { a: switch (typeof f) { case "object": var l = null != f; break a; case "function": l = !0; break a; default: l = !1 }l ? this.resolveToNonPromiseObj_(f) : this.fulfill_(f) } }; e.prototype.resolveToNonPromiseObj_ = function (f) { var l = void 0; try { l = f.then } catch (g) { this.reject_(g); return } "function" == typeof l ? this.settleSameAsThenable_(l, f) : this.fulfill_(f) }; e.prototype.reject_ = function (f) { this.settle_(2, f) }; e.prototype.fulfill_ = function (f) { this.settle_(1, f) }; e.prototype.settle_ = function (f, l) { if (0 != this.state_) throw Error("Cannot settle(" + f + ", " + l + "): Promise already settled in state" + this.state_); this.state_ = f; this.result_ = l; 2 === this.state_ && this.scheduleUnhandledRejectionCheck_(); this.executeOnSettledCallbacks_() }; e.prototype.scheduleUnhandledRejectionCheck_ = function () { var f = this; d(function () { if (f.notifyUnhandledRejection_()) { var l = $jscomp.global.console; "undefined" !== typeof l && l.error(f.result_) } }, 1) }; e.prototype.notifyUnhandledRejection_ = function () { if (this.isRejectionHandled_) return !1; var f = $jscomp.global.CustomEvent, l = $jscomp.global.Event, g = $jscomp.global.dispatchEvent; if ("undefined" === typeof g) return !0; "function" === typeof f ? f = new f("unhandledrejection", { cancelable: !0 }) : "function" === typeof l ? f = new l("unhandledrejection", { cancelable: !0 }) : (f = $jscomp.global.document.createEvent("CustomEvent"), f.initCustomEvent("unhandledrejection", !1, !0, f)); f.promise = this; f.reason = this.result_; return g(f) }; e.prototype.executeOnSettledCallbacks_ = function () { if (null != this.onSettledCallbacks_) { for (var f = 0; f < this.onSettledCallbacks_.length; ++f)h.asyncExecute(this.onSettledCallbacks_[f]); this.onSettledCallbacks_ = null } }; var h = new b; e.prototype.settleSameAsPromise_ = function (f) { var l = this.createResolveAndReject_(); f.callWhenSettled_(l.resolve, l.reject) }; e.prototype.settleSameAsThenable_ = function (f, l) { var g = this.createResolveAndReject_(); try { f.call(l, g.resolve, g.reject) } catch (k) { g.reject(k) } }; e.prototype.then = function (f, l) { function g(q, w) { return "function" == typeof q ? function (C) { try { k(q(C)) } catch (E) { m(E) } } : w } var k, m, n = new e(function (q, w) { k = q; m = w }); this.callWhenSettled_(g(f, k), g(l, m)); return n }; e.prototype.catch = function (f) { return this.then(void 0, f) }; e.prototype.callWhenSettled_ = function (f, l) { function g() { switch (k.state_) { case 1: f(k.result_); break; case 2: l(k.result_); break; default: throw Error("Unexpected state: " + k.state_); } } var k = this; null == this.onSettledCallbacks_ ? h.asyncExecute(g) : this.onSettledCallbacks_.push(g); this.isRejectionHandled_ = !0 }; e.resolve = c; e.reject = function (f) { return new e(function (l, g) { g(f) }) }; e.race = function (f) { return new e(function (l, g) { for (var k = $jscomp.makeIterator(f), m = k.next(); !m.done; m = k.next())c(m.value).callWhenSettled_(l, g) }) }; e.all = function (f) { var l = $jscomp.makeIterator(f), g = l.next(); return g.done ? c([]) : new e(function (k, m) { function n(C) { return function (E) { q[C] = E; w--; 0 == w && k(q) } } var q = [], w = 0; do q.push(void 0), w++, c(g.value).callWhenSettled_(n(q.length - 1), m), g = l.next(); while (!g.done) }) }; return e }, "es6", "es3"); $jscomp.owns = function (a, b) { return Object.prototype.hasOwnProperty.call(a, b) }; $jscomp.polyfill("Object.entries", function (a) { return a ? a : function (b) { var c = [], d; for (d in b) $jscomp.owns(b, d) && c.push([d, b[d]]); return c } }, "es8", "es3"); $jscomp.polyfill("Math.tanh", function (a) { return a ? a : function (b) { b = Number(b); if (0 === b) return b; var c = Math.exp(-2 * Math.abs(b)); c = (1 - c) / (1 + c); return 0 > b ? -c : c } }, "es6", "es3"); $jscomp.polyfill("Array.from", function (a) { return a ? a : function (b, c, d) { c = null != c ? c : function (l) { return l }; var e = [], h = "undefined" != typeof Symbol && Symbol.iterator && b[Symbol.iterator]; if ("function" == typeof h) { b = h.call(b); for (var f = 0; !(h = b.next()).done;)e.push(c.call(d, h.value, f++)) } else for (h = b.length, f = 0; f < h; f++)e.push(c.call(d, b[f], f)); return e } }, "es6", "es3"); $jscomp.polyfill("Object.is", function (a) { return a ? a : function (b, c) { return b === c ? 0 !== b || 1 / b === 1 / c : b !== b && c !== c } }, "es6", "es3"); $jscomp.polyfill("Array.prototype.includes", function (a) { return a ? a : function (b, c) { var d = this; d instanceof String && (d = String(d)); var e = d.length; c = c || 0; for (0 > c && (c = Math.max(c + e, 0)); c < e; c++) { var h = d[c]; if (h === b || Object.is(h, b)) return !0 } return !1 } }, "es7", "es3"); $jscomp.checkStringArgs = function (a, b, c) { if (null == a) throw new TypeError("The 'this' value for String.prototype." + c + " must not be null or undefined"); if (b instanceof RegExp) throw new TypeError("First argument to String.prototype." + c + " must not be a regular expression"); return a + "" }; $jscomp.polyfill("String.prototype.includes", function (a) { return a ? a : function (b, c) { return -1 !== $jscomp.checkStringArgs(this, b, "includes").indexOf(b, c || 0) } }, "es6", "es3"); $jscomp.polyfill("String.prototype.replaceAll", function (a) { return a ? a : function (b, c) { if (b instanceof RegExp && !b.global) throw new TypeError("String.prototype.replaceAll called with a non-global RegExp argument."); return b instanceof RegExp ? this.replace(b, c) : this.replace(new RegExp(String(b).replace(/([-()\[\]{}+?*.$\^|,:#<!\\])/g, "\\$1").replace(/\x08/g, "\\x08"), "g"), c) } }, "es_2021", "es3"); $jscomp.iteratorFromArray = function (a, b) { a instanceof String && (a += ""); var c = 0, d = !1, e = { next: function () { if (!d && c < a.length) { var h = c++; return { value: b(h, a[h]), done: !1 } } d = !0; return { done: !0, value: void 0 } } }; e[Symbol.iterator] = function () { return e }; return e }; $jscomp.polyfill("Array.prototype.keys", function (a) { return a ? a : function () { return $jscomp.iteratorFromArray(this, function (b) { return b }) } }, "es6", "es3"); $jscomp.checkEs6ConformanceViaProxy = function () { try { var a = {}, b = Object.create(new $jscomp.global.Proxy(a, { get: function (c, d, e) { return c == a && "q" == d && e == b } })); return !0 === b.q } catch (c) { return !1 } }; $jscomp.USE_PROXY_FOR_ES6_CONFORMANCE_CHECKS = !1; $jscomp.ES6_CONFORMANCE = $jscomp.USE_PROXY_FOR_ES6_CONFORMANCE_CHECKS && $jscomp.checkEs6ConformanceViaProxy(); $jscomp.polyfill("WeakMap", function (a) { function b() { if (!a || !Object.seal) return !1; try { var k = Object.seal({}), m = Object.seal({}), n = new a([[k, 2], [m, 3]]); if (2 != n.get(k) || 3 != n.get(m)) return !1; n.delete(k); n.set(m, 4); return !n.has(k) && 4 == n.get(m) } catch (q) { return !1 } } function c() { } function d(k) { var m = typeof k; return "object" === m && null !== k || "function" === m } function e(k) { if (!$jscomp.owns(k, f)) { var m = new c; $jscomp.defineProperty(k, f, { value: m }) } } function h(k) { if (!$jscomp.ISOLATE_POLYFILLS) { var m = Object[k]; m && (Object[k] = function (n) { if (n instanceof c) return n; Object.isExtensible(n) && e(n); return m(n) }) } } if ($jscomp.USE_PROXY_FOR_ES6_CONFORMANCE_CHECKS) { if (a && $jscomp.ES6_CONFORMANCE) return a } else if (b()) return a; var f = "$jscomp_hidden_" + Math.random(); h("freeze"); h("preventExtensions"); h("seal"); var l = 0, g = function (k) { this.id_ = (l += Math.random() + 1).toString(); if (k) { k = $jscomp.makeIterator(k); for (var m; !(m = k.next()).done;)m = m.value, this.set(m[0], m[1]) } }; g.prototype.set = function (k, m) { if (!d(k)) throw Error("Invalid WeakMap key"); e(k); if (!$jscomp.owns(k, f)) throw Error("WeakMap key fail: " + k); k[f][this.id_] = m; return this }; g.prototype.get = function (k) { return d(k) && $jscomp.owns(k, f) ? k[f][this.id_] : void 0 }; g.prototype.has = function (k) { return d(k) && $jscomp.owns(k, f) && $jscomp.owns(k[f], this.id_) }; g.prototype.delete = function (k) { return d(k) && $jscomp.owns(k, f) && $jscomp.owns(k[f], this.id_) ? delete k[f][this.id_] : !1 }; return g }, "es6", "es3"); $jscomp.MapEntry = function () { }; $jscomp.polyfill("Map", function (a) {
+            function b() { if ($jscomp.ASSUME_NO_NATIVE_MAP || !a || "function" != typeof a || !a.prototype.entries || "function" != typeof Object.seal) return !1; try { var g = Object.seal({ x: 4 }), k = new a($jscomp.makeIterator([[g, "s"]])); if ("s" != k.get(g) || 1 != k.size || k.get({ x: 4 }) || k.set({ x: 4 }, "t") != k || 2 != k.size) return !1; var m = k.entries(), n = m.next(); if (n.done || n.value[0] != g || "s" != n.value[1]) return !1; n = m.next(); return n.done || 4 != n.value[0].x || "t" != n.value[1] || !m.next().done ? !1 : !0 } catch (q) { return !1 } }
+            if ($jscomp.USE_PROXY_FOR_ES6_CONFORMANCE_CHECKS) { if (a && $jscomp.ES6_CONFORMANCE) return a } else if (b()) return a; var c = new WeakMap, d = function (g) { this.data_ = {}; this.head_ = f(); this.size = 0; if (g) { g = $jscomp.makeIterator(g); for (var k; !(k = g.next()).done;)k = k.value, this.set(k[0], k[1]) } }; d.prototype.set = function (g, k) { g = 0 === g ? 0 : g; var m = e(this, g); m.list || (m.list = this.data_[m.id] = []); m.entry ? m.entry.value = k : (m.entry = { next: this.head_, previous: this.head_.previous, head: this.head_, key: g, value: k }, m.list.push(m.entry), this.head_.previous.next = m.entry, this.head_.previous = m.entry, this.size++); return this }; d.prototype.delete = function (g) { g = e(this, g); return g.entry && g.list ? (g.list.splice(g.index, 1), g.list.length || delete this.data_[g.id], g.entry.previous.next = g.entry.next, g.entry.next.previous = g.entry.previous, g.entry.head = null, this.size--, !0) : !1 }; d.prototype.clear = function () { this.data_ = {}; this.head_ = this.head_.previous = f(); this.size = 0 }; d.prototype.has = function (g) { return !!e(this, g).entry }; d.prototype.get = function (g) { return (g = e(this, g).entry) && g.value }; d.prototype.entries = function () { return h(this, function (g) { return [g.key, g.value] }) }; d.prototype.keys = function () { return h(this, function (g) { return g.key }) }; d.prototype.values = function () { return h(this, function (g) { return g.value }) }; d.prototype.forEach = function (g, k) { for (var m = this.entries(), n; !(n = m.next()).done;)n = n.value, g.call(k, n[1], n[0], this) }; d.prototype[Symbol.iterator] = d.prototype.entries; var e = function (g, k) { var m = k && typeof k; "object" == m || "function" == m ? c.has(k) ? m = c.get(k) : (m = "" + ++l, c.set(k, m)) : m = "p_" + k; var n = g.data_[m]; if (n && $jscomp.owns(g.data_, m)) for (g = 0; g < n.length; g++) { var q = n[g]; if (k !== k && q.key !== q.key || k === q.key) return { id: m, list: n, index: g, entry: q } } return { id: m, list: n, index: -1, entry: void 0 } }, h = function (g, k) { var m = g.head_; return $jscomp.iteratorPrototype(function () { if (m) { for (; m.head != g.head_;)m = m.previous; for (; m.next != m.head;)return m = m.next, { done: !1, value: k(m) }; m = null } return { done: !0, value: void 0 } }) }, f = function () { var g = {}; return g.previous = g.next = g.head = g }, l = 0; return d
+        }, "es6", "es3"); $jscomp.polyfill("Set", function (a) {
+            function b() { if ($jscomp.ASSUME_NO_NATIVE_SET || !a || "function" != typeof a || !a.prototype.entries || "function" != typeof Object.seal) return !1; try { var d = Object.seal({ x: 4 }), e = new a($jscomp.makeIterator([d])); if (!e.has(d) || 1 != e.size || e.add(d) != e || 1 != e.size || e.add({ x: 4 }) != e || 2 != e.size) return !1; var h = e.entries(), f = h.next(); if (f.done || f.value[0] != d || f.value[1] != d) return !1; f = h.next(); return f.done || f.value[0] == d || 4 != f.value[0].x || f.value[1] != f.value[0] ? !1 : h.next().done } catch (l) { return !1 } }
+            if ($jscomp.USE_PROXY_FOR_ES6_CONFORMANCE_CHECKS) { if (a && $jscomp.ES6_CONFORMANCE) return a } else if (b()) return a; var c = function (d) { this.map_ = new Map; if (d) { d = $jscomp.makeIterator(d); for (var e; !(e = d.next()).done;)this.add(e.value) } this.size = this.map_.size }; c.prototype.add = function (d) { d = 0 === d ? 0 : d; this.map_.set(d, d); this.size = this.map_.size; return this }; c.prototype.delete = function (d) { d = this.map_.delete(d); this.size = this.map_.size; return d }; c.prototype.clear = function () { this.map_.clear(); this.size = 0 }; c.prototype.has = function (d) { return this.map_.has(d) }; c.prototype.entries = function () { return this.map_.entries() }; c.prototype.values = function () { return this.map_.values() }; c.prototype.keys = c.prototype.values; c.prototype[Symbol.iterator] = c.prototype.values; c.prototype.forEach = function (d, e) { var h = this; this.map_.forEach(function (f) { return d.call(e, f, f, h) }) }; return c
+        }, "es6", "es3"); try { "deepai.org" !== window.location.hostname && "deep.ai" !== window.location.hostname && "127.0.0.1" !== window.location.hostname && (window.location.href = "https://deepai.org" + window.location.pathname + window.location.search) } catch (a) { console.log("error redirecting to deepai.org: " + a) } try { (function (a) { a.location !== a.top.location && (a.top.location = a.location) })(this) } catch (a) { console.log("error breaking out of iframe", a) } var app_base_url = "https://api.deepai.org"; try { localStorage.setItem("name", "Hello World!") } catch (a) { console.log("Error - local storage is full. clearing local storage"); try { localStorage.clear() } catch (b) { console.log("error clearing local storage: " + b) } } var onCategoryPage = !1, reeferrerMadness = document.referrer, cookieUserReeferrer = localStorage.getItem("userReeferrer"); void 0 == cookieUserReeferrer && (localStorage.setItem("userReeferrer", reeferrerMadness), cookieUserReeferrer = localStorage.getItem("userReeferrer")); var thisLocation = window.location.pathname, pagePathCookie = localStorage.getItem("pagePath"); if (void 0 == pagePathCookie) localStorage.setItem("pagePath", [thisLocation]); else if (!(1E5 < pagePathCookie.length)) { var newPagePathCookie = [pagePathCookie, thisLocation]; localStorage.setItem("pagePath", newPagePathCookie) } var latestPagePathCookie = localStorage.getItem("pagePath"); console.log(latestPagePathCookie); console.log(cookieUserReeferrer); if (document.createElement("dialog").showModal) console.log("not loading dialog polyfill"); else { console.log("loading dialog polyfill..."); var script = document.createElement("script"); script.src = "/static/js/libs/dialog-polyfill.js"; script.type = "text/javascript"; script.async = !0; script.onload = function () { for (var a = $jscomp.makeIterator(document.getElementsByTagName("dialog")), b = a.next(); !b.done; b = a.next())dialogPolyfill.registerDialog(b.value) }; document.getElementsByTagName("head")[0].appendChild(script) }
+        window.localStorage && window.sessionStorage || function () { var a = function (b) { function c(f, l, g) { if (g) { var k = new Date; k.setTime(k.getTime() + 864E5 * g); g = "; expires=" + k.toGMTString() } else g = ""; document.cookie = f + "=" + l + g + "; path=/" } function d(f) { f = JSON.stringify(f); "session" == b ? window.name = f : c("localStorage", f, 365) } function e() { var f = 0, l; for (l in h) h.hasOwnProperty(l) && (f += 1); return f } var h = function () { if ("session" == b) var f = window.name; else a: { f = document.cookie.split(";"); var l, g; for (l = 0; l < f.length; l++) { for (g = f[l]; " " == g.charAt(0);)g = g.substring(1, g.length); if (0 == g.indexOf("localStorage=")) { f = g.substring(13, g.length); break a } } f = null } return f ? JSON.parse(f) : {} }(); return { clear: function () { h = {}; "session" == b ? window.name = "" : c("localStorage", "", 365); this.length = e() }, getItem: function (f) { f = encodeURIComponent(f); return void 0 === h[f] ? null : h[f] }, key: function (f) { var l = 0, g; for (g in h) { if (l == f) return decodeURIComponent(g); l++ } return null }, removeItem: function (f) { f = encodeURIComponent(f); delete h[f]; d(h); this.length = e() }, setItem: function (f, l) { f = encodeURIComponent(f); h[f] = String(l); d(h); this.length = e() }, length: 0 } }; window.localStorage || (window.localStorage = new a("local")); window.sessionStorage || (window.sessionStorage = new a("session")) }(); self.fetch || (self.fetch = function (a, b) { return b = b || {}, new Promise(function (c, d) { var e = new XMLHttpRequest, h = [], f = [], l = {}, g = function () { return { ok: 2 == (e.status / 100 | 0), statusText: e.statusText, status: e.status, url: e.responseURL, text: function () { return Promise.resolve(e.responseText) }, json: function () { return Promise.resolve(JSON.parse(e.responseText)) }, blob: function () { return Promise.resolve(new Blob([e.response])) }, clone: g, headers: { keys: function () { return h }, entries: function () { return f }, get: function (m) { return l[m.toLowerCase()] }, has: function (m) { return m.toLowerCase() in l } } } }, k; for (k in e.open(b.method || "get", a, !0), e.onload = function () { e.getAllResponseHeaders().replace(/^(.*?):[^\S\n]*([\s\S]*?)$/gm, function (m, n, q) { h.push(n = n.toLowerCase()); f.push([n, q]); l[n] = l[n] ? l[n] + "," + q : q }); c(g()) }, e.onerror = d, e.withCredentials = "include" == b.credentials, b.headers) e.setRequestHeader(k, b.headers[k]); e.send(b.body || null) }) }); var user_object = {}; function userIsLoggedIn() { return user_object.pk ? !0 : !1 }
+        function saveDeepaiProLinkUrl() { var a, b; return $jscomp.asyncExecutePromiseGeneratorProgram(function (c) { if (1 == c.nextAddress) return c.yield(fetch(app_base_url + "/get_my_stripe_subscription_checkout_link", { method: "GET", credentials: "include" }), 2); if (3 != c.nextAddress) return a = c.yieldResult, c.yield(a.json(), 3); b = c.yieldResult; window.deepaiProLinkUrl = b.link; console.log("got deepaiProLinkUrl", window.deepaiProLinkUrl); window.deepaiAddCreditsLinkUrl = b.add_credits_link; console.log("got deepaiAddCreditsLinkUrl", window.deepaiAddCreditsLinkUrl); c.jumpToEnd() }) } function unlockAllStyleButtons() { for (var a = $jscomp.makeIterator(document.querySelectorAll(".other-model-button[locked=True]")), b = a.next(); !b.done; b = a.next())b.value.setAttribute("locked", "False"); document.getElementById("selectedModelPaidOnly") && document.getElementById("selectedModelPaidOnly").setAttribute("locked", "False") } function unlockGeniusMode() { document.getElementById("genius") && document.getElementById("genius").removeAttribute("locked") }
+        function checkAuthStatus() { var a, b, c, d, e, h; return $jscomp.asyncExecutePromiseGeneratorProgram(function (f) { localStorage.getItem("user") && (user_object = JSON.parse(localStorage.getItem("user"))); console.log(user_object); if (!userIsLoggedIn()) return f.jumpTo(0); user_object.userprofile2.user_can_use_genius_mode && unlockGeniusMode(); !1 === user_object.userprofile2.locked_out_due_to_no_payment_info && unlockAllStyleButtons(); saveDeepaiProLinkUrl(); a = $jscomp.makeIterator(document.getElementsByClassName("signup-button")); for (b = a.next(); !b.done; b = a.next())c = b.value, c.setAttribute("onclick", "window.location.replace('/dashboard/profile')"), c.innerHTML = "My Profile"; document.getElementById("signup-button-dropdown") && (document.getElementById("signup-button-dropdown").setAttribute("onclick", "window.location.replace('/dashboard/profile')"), document.getElementById("signup-button-dropdown").innerHTML = "My Profile"); d = $jscomp.makeIterator(document.getElementsByClassName("login-button")); for (e = d.next(); !e.done; e = d.next())h = e.value, h.setAttribute("onclick", "logout()"), h.innerHTML = "Log Out"; document.getElementById("login-button-dropdown") && (document.getElementById("login-button-dropdown").setAttribute("onclick", "logout()"), document.getElementById("login-button-dropdown").innerHTML = "Log Out"); user_object.userprofile && user_object.userprofile.api_key ? applyApiKeyToCodeExamples(user_object.userprofile.api_key) : console.log("Error - user is logged in but has no API key."); applyCachedHeartsToHeartsOnPage(); return f.yield(refreshHeartsFromServer(), 0) }) }
+
+        function auth() { var a, b, c; return $jscomp.asyncExecutePromiseGeneratorProgram(function (d) { switch (d.nextAddress) { case 1: return d.yield(fetch(app_base_url + "/rest-auth/user/", { credentials: "include" }), 2); case 2: return a = d.yieldResult, d.yield(a.json(), 3); case 3: return b = d.yieldResult, c = JSON.stringify(b), d.yield(a.status, 4); case 4: if (200 == d.yieldResult) return localStorage.setItem("user", c), user_object = JSON.parse(localStorage.getItem("user")), d.yield(checkAuthStatus(), 6); localStorage.setItem("user", c); return d.yield(checkAuthStatus(), 6); case 6: d.jumpToEnd() } }) } function mainNavDrop() { document.getElementById("mainNavDropdown").classList.toggle("show-dropdown") }
+        
+        window.onclick = function (a) { a.target.closest(".dropdown-link") || a.target.closest(".content-dropdown-link") || a.target.matches(".dropbtn") || (document.getElementById("contentNavDropdown") && (a = document.getElementById("contentNavDropdown"), a.classList.contains("show-dropdown") && a.classList.remove("show-dropdown")), a = document.getElementById("mainNavDropdown"), a.classList.contains("show-dropdown") && a.classList.remove("show-dropdown")) }; var lastApiKeyUsed; function applyApiKeyToCodeExamples(a) { for (var b = $jscomp.makeIterator(document.getElementsByClassName("api-key-auto-substitute-area")), c = b.next(); !c.done; c = b.next())for (c = document.createTreeWalker(c.value); c.nextNode();) { var d = c.currentNode; if (d.nodeValue) { var e = d.nodeValue.replace("YOUR_API_KEY", a); lastApiKeyUsed && (e = e.replace(lastApiKeyUsed, a)); d.nodeValue = e } } lastApiKeyUsed = a } applyApiKeyToCodeExamples("quickstart-QUdJIGlzIGNvbWluZy4uLi4K"); checkAuthStatus(); auth(); function refreshHeartsFromServer() { var a, b; return $jscomp.asyncExecutePromiseGeneratorProgram(function (c) { if (1 == c.nextAddress) return c.yield(fetch(app_base_url + "/get_my_hearted_object_ids", { credentials: "include" }), 2); if (3 != c.nextAddress) return a = c.yieldResult, c.yield(a.json(), 3); b = c.yieldResult; localStorage.setItem("hearts-cache", JSON.stringify(b)); applyCachedHeartsToHeartsOnPage(); c.jumpToEnd() }) }
+
+        <!--  -->
+
+        function heart(a) { var b, c, d, e, h, f, l, g, k; return $jscomp.asyncExecutePromiseGeneratorProgram(function (m) { if (1 == m.nextAddress) { if (!userIsLoggedIn()) return openSignup(function () { heart(a) }), m.return(); localStorage.getItem("hearts-cache") ? b = JSON.parse(localStorage.getItem("hearts-cache")) : (console.log("warning, hearts cache is empty. creating new hearts cache..."), b = { hearts: {} });
+        
+        d = 1 * a.getElementsByClassName("heart-count")[0].innerText; a.attributes.hearted ? (a.removeAttribute("hearted"), c = "false", delete b.hearts[a.attributes.heartid.value], e = d - 1, 0 > e && (e = 0), a.getElementsByClassName("heart-count")[0].innerText = e) : (a.setAttribute("hearted", "hearted"), c = "true", b.hearts[a.attributes.heartid.value] = !0, a.getElementsByClassName("heart-count")[0].innerText = d + 1); localStorage.setItem("hearts-cache", JSON.stringify(b)); h = new FormData; 
+        
+        f = a.attributes.heartid.value.split("-"); l = f[0]; g = f[1]; h.append("type", l); h.append("id", g); h.append("switch", c); return m.yield(fetch(app_base_url + "/add_remove_heart", { method: "POST", credentials: "include", body: h }), 2) } k = m.yieldResult; console.log("hearty response ", k); m.jumpToEnd() }) }
+        
+        function newsletter(a) { var b, c, d, e; return $jscomp.asyncExecutePromiseGeneratorProgram(function (h) { if (1 == h.nextAddress) { a.preventDefault(); newsletter_email = document.getElementById("newsletter-email"); newsletter_email_value = newsletter_email.value; signup_page = window.location.pathname; b = new FormData; b.append("email", newsletter_email_value); b.append("signup_page", signup_page); b.append("referrer", "[" + cookieUserReeferrer + "][" + latestPagePathCookie + "]"); if ("" == newsletter_email_value) return h.jumpTo(0); newsletter_email.classList.add("loading"); return h.yield(fetch(app_base_url + "/add_to_deepai_newsletter", { method: "POST", credentials: "include", body: b }), 3) } c = h.yieldResult; console.log(c); 1 == c.ok ? (newsletter_email.classList.remove("loading"), d = "Success! You're so smart and beautiful.", e = document.getElementById("newsletter-success-message"), e.innerHTML = d, e.setAttribute("style", "display: block;")) : 0 == c.ok && (newsletter_email.classList.remove("loading"), d = "oops! It's not you, it's us. Try that again.", e = document.getElementById("newsletter-success-message"), e.innerHTML = d, e.setAttribute("style", "display: block;")); h.jumpToEnd() }) } 
+        
+        var modal = document.getElementById("signup-modal"), afterSignupFunction = null, openSignup = function (a, b) { afterSignupFunction = a; userIsLoggedIn() ? afterSignupFunction && afterSignupFunction() : (b && (modal.getElementsByClassName("title")[0].innerHTML = b), modal.showModal()) }, close = document.getElementById("close"); close.addEventListener("click", function () { modal.close("cancelled") }); modal.addEventListener("cancel", function () { modal.close("cancelled") }); modal.addEventListener("click", function (a) { a.target === modal && modal.close("cancelled") }); 
+                
+        function save_custom_signup_data(a) { var b, c; return $jscomp.asyncExecutePromiseGeneratorProgram(function (d) { if (1 == d.nextAddress) return b = getSignupCustomData(a), d.yield(fetch(app_base_url + "/save_custom_signup_data", { credentials: "include", method: "POST", body: JSON.stringify(b), headers: { "Content-Type": "application/json" } }), 2); c = d.yieldResult; if (!c.ok) throw Error("saving custom signup data HTTP status " + c.status); return d.return(null) }) }
+        
+        function signup(a) {
+            var b, c, d, e, h, f, l, g, k, m, n, q, w, C, E, N, H, R, D, A; return $jscomp.asyncExecutePromiseGeneratorProgram(function (t) {
+                switch (t.nextAddress) {
+                    case 1: return a.preventDefault(), b = document.getElementById("user-email-error"), b.innerHTML = "", b.setAttribute("style", "display: none;"), c = document.getElementById("user-email"), d = document.getElementById("user-password"), e = document.getElementById("confirm-user-password"), h = c.value, f = d.value, l = e.value, g = new FormData, g.append("email", h), g.append("username", h), g.append("password1", f), g.append("password2", l), c.classList.add("loading"), k = null, h ? d ? e || (k = "Password confirmation is required") : k = "Password is required" : k = "Email is required", k ? (b.innerHTML = k, b.setAttribute("style", "display: block;"), c.classList.remove("loading"), t.return()) : t.yield(get_user_login_type(h), 3); case 3: m = t.yieldResult;
+                    
+                    if (m.user_exists) {
+                        c.classList.remove("loading"); n = "This account already exists"; m.login_with_password || (q = m.login_with_social_accounts[0], n = "This account exists and needs to be logged in using " +
+                            q); b = document.getElementById("user-email-error"); b.innerHTML = n; b.setAttribute("style", "display: block;"); t.jumpTo(0); break
+                    } 
+                    return t.yield(save_custom_signup_data(null), 5); case 5: return t.yield(fetch(app_base_url + "/rest-auth/registration/", { credentials: "include", method: "POST", body: g }), 6); case 6: w = t.yieldResult; console.log(w); if (1 == w.ok) return c.classList.remove("loading"), modal.close("cancelled"), afterSignupFunction ? t.yield(auth(), 16) : t.yield(auth(), 0); if (0 != w.ok) { t.jumpTo(0); break } c.classList.remove("loading"); if (500 == w.status) { C = "Hmm, something went wrong. Perhaps try another email address, or try again later."; b = document.getElementById("user-email-error"); b.innerHTML = C; b.setAttribute("style", "display: block;"); t.jumpTo(0); break } if (!(400 <= w.status)) { t.jumpTo(0); break } 
+
+                    return t.yield(w.json(), 12); case 12: E = t.yieldResult; C = "Hmm, something went wrong. Perhaps try another email address, or try again later."; N = $jscomp.makeIterator(Object.entries(E)); for (H = N.next(); !H.done; H = N.next())if (R = H.value, D = $jscomp.makeIterator(R), D.next(), A = D.next().value, A[0]) { C = A[0]; break } b = document.getElementById("user-email-error"); b.innerHTML = C; b.setAttribute("style", "display: block;"); t.jumpTo(0); break; case 16: afterSignupFunction(), t.jumpToEnd()
+                }
+            })
+        }
+        
+                
+        var subscription_modal = document.getElementById("subscription-modal"); afterLoginFunction = null; 
+        var openSubscription = function () { userIsLoggedIn() ? (document.getElementById("deepaiProSubscriptionRow").style.display = "flex", document.getElementById("deepaiProSignupRow").style.display = "none", document.getElementById("otherdeepaiProPaymentRow").style.display = "flex", document.getElementById("otherdeepaiProSignupRow").style.display = "none") : (document.getElementById("deepaiProSubscriptionRow").style.display = "none", document.getElementById("otherdeepaiProPaymentRow").style.display = "none", document.getElementById("otherdeepaiProSignupRow").style.display = "flex", document.getElementById("deepaiProSignupRow").style.display = "flex");
+         subscription_modal.showModal(); window.addEventListener("message", function () { console.log("received message:  ", event.data); "stripe subscription success" == event.data && subscription_modal.close("cancelled") }, !1) }, closeSubscription = document.getElementById("close-sub"); closeSubscription.addEventListener("click", function () { subscription_modal.close("cancelled") }); subscription_modal.addEventListener("cancel", function () { subscription_modal.close("cancelled") }); subscription_modal.addEventListener("click", function (a) { a.target === subscription_modal && subscription_modal.close("cancelled") }); 
+        
+        var out_of_credits_modal = document.getElementById("out-of-credits-modal"), openOutOfCredits = function (a) { out_of_credits_modal.showModal(); null !== a && void 0 !== a && (a = a.toFixed(2), document.getElementById("currentAccountBalance").innerText = a) }, closeOutOfCredits = document.getElementById("close-out-of-credits"); closeOutOfCredits.addEventListener("click", function () { out_of_credits_modal.close("cancelled") });
+        
+        out_of_credits_modal.addEventListener("cancel", function () { out_of_credits_modal.close("cancelled") }); out_of_credits_modal.addEventListener("click", function (a) { a.target === out_of_credits_modal && out_of_credits_modal.close("cancelled") });
+        
+        <!--  -->
+
+        
+        function social_signup(a, b) { var c, d, e; return $jscomp.asyncExecutePromiseGeneratorProgram(function (h) { switch (h.nextAddress) { case 1: return a.preventDefault(), c = document.getElementById("user-email"), c.classList.add("loading"), d = document.getElementById("user-email-error"), d.innerHTML = "", d.setAttribute("style", "display: none;"), h.yield(social_auth(b, null), 2); case 2: return h.yield(fetch(app_base_url + "/rest-auth/user/", { credentials: "include" }), 3); case 3: e = h.yieldResult; if (1 != e.ok) { c.classList.remove("loading"); d.innerHTML = "Hmm, something went wrong. You might already have an account with that email, or your passwords do not match."; d.setAttribute("style", "display: block;"); h.jumpTo(0); break } c.classList.remove("loading"); modal.close("cancelled"); return afterSignupFunction ? h.yield(auth(), 8) : h.yield(auth(), 0); case 8: afterSignupFunction(), h.jumpToEnd() } }) }
+        
+        function social_login(a, b) { var c, d, e; return $jscomp.asyncExecutePromiseGeneratorProgram(function (h) { if (1 == h.nextAddress) return a.preventDefault(), h.yield(social_auth(b, null), 2); if (3 != h.nextAddress) return c = document.getElementById("login-user-email"), c.classList.add("loading"), h.yield(fetch(app_base_url + "/rest-auth/user/", { credentials: "include" }), 3); d = h.yieldResult; if (1 != d.ok) return c.classList.remove("loading"), e = document.getElementById("login-user-email-error"), e.innerHTML = "Hmm, something went wrong. Let's try that again.", e.setAttribute("style", "display: block;"), h.jumpTo(0); c.classList.remove("loading"); return h.yield(auth(), 0) }) } function logout() { return $jscomp.asyncExecutePromiseGeneratorProgram(function (a) { if (1 == a.nextAddress) return a.yield(fetch(app_base_url + "/rest-auth/logout/", { method: "POST", credentials: "include" }), 2); localStorage.removeItem("user"); localStorage.removeItem("hearts-cache"); user_object = {}; window.location = "/"; a.jumpToEnd() }) }
+        
+        function resetPassword(a) { var b, c, d, e; return $jscomp.asyncExecutePromiseGeneratorProgram(function (h) { if (1 == h.nextAddress) return b = document.getElementById("login-user-email-error"), b.innerHTML = "", b.setAttribute("style", "display: none;"), login_user_email = document.getElementById("login-user-email"), login_user_email_value = login_user_email.value, c = new FormData, c.append("email", login_user_email_value), h.yield(fetch(app_base_url + "/password_reset_trigger", { method: "POST", credentials: "include", body: c }), 2); d = h.yieldResult; console.log(d); 1 == d.ok ? (e = "Check your email inbox to reset password.", b = document.getElementById("login-user-email-error"), b.innerHTML = e, b.setAttribute("style", "display: block; margin-top: 20px;")) : 0 == d.ok && (e = "Hmm something isn't right. Please try again or contact us.", b = document.getElementById("login-user-email-error"), b.innerHTML = e, b.setAttribute("style", "display: block; margin-top: 20px;")); h.jumpToEnd() }) }
+
+        var thisPagePath = window.location.pathname, social_modal = document.getElementById("social-modal"), openSocial = function (a, b, c) { social_modal.showModal(); document.getElementById("share_title").innerHTML = b; document.getElementById("social-image").setAttribute("style", "background-image: url('" + c + "')"); document.getElementById("fb-link").href = "https://www.facebook.com/sharer.php?u=" + a; document.getElementById("tw-link").href = "https://twitter.com/intent/tweet?url=" + a; document.getElementById("lkdin-link").href = "https://www.linkedin.com/shareArticle?mini=true&url=" + a }, closeSocial = document.getElementById("close-social"); closeSocial.addEventListener("click", function () { social_modal.close("cancelled") }); 
+        social_modal.addEventListener("cancel", function () { social_modal.close("cancelled") }); social_modal.addEventListener("click", function (a) { a.target === social_modal && social_modal.close("cancelled") }); var openArtModal = function (a) { var b = document.getElementById("art-modal-" + a); b.showModal(); b.addEventListener("cancel", function () { b.close("cancelled") }); b.addEventListener("click", function (c) { c.target === b && b.close("cancelled") }) }; function fragmentFromString(a) { return document.createRange().createContextualFragment(a) } var mainListElement = document.getElementById("main-list"), currentSortMode; function doSearch() { var a, b, c, d, e, h, f, l, g; return $jscomp.asyncExecutePromiseGeneratorProgram(function (k) { switch (k.nextAddress) { case 1: a = searchInput.value; if (!onCategoryPage) return window.location.href = "/?search=" + encodeURIComponent(a), k.return(); for (currentSortMode = "searching"; mainListElement.firstChild;)mainListElement.removeChild(mainListElement.firstChild); msnry && (msnry.reloadItems(), msnry.layout()); showHideScrollLoading(!0); b = app_base_url + "/site_search_row_listing/" + search_area + "?query=" + encodeURIComponent(a); k.setCatchFinallyBlocks(2, 3); return k.yield(fetch(b), 5); case 5: c = k.yieldResult; if (!c.ok) throw c; return k.yield(c.text(), 6); case 6: d = k.yieldResult; 5 > d.length && console.log("search returned nothing"); e = fragmentFromString(d); for (h = 0; h < e.children.length; h++)f = e.children[h], mainListElement.querySelector('[objectid="' + f.attributes.objectid.value + '"][objectclass="' + f.attributes.objectclass.value + '"]') ? console.log("skipping duplicate objectclass/objectid: ", f.attributes.objectclass.value, f.attributes.objectid.value) : (l = mainListElement.appendChild(f), msnry && msnry.appended(l)); applyCachedHeartsToHeartsOnPage(); showHideScrollLoading(!1); case 3: k.enterFinallyBlock(); showHideScrollLoading(!1); k.leaveFinallyBlock(0); break; case 2: g = k.enterCatchBlock(), console.log("caught search error...", g), k.jumpTo(3) } }) } var chat_style = "chat", currentProgressTime = 0, currentProgressTimer = null, currentlyRunningModel = !1, model_expected_runtime = 5; function cancelProgressBar() { progressBar = document.getElementById("progressBar"); progressBar.style.width = "0%"; currentProgressTime = 0; currentProgressTimer && (window.clearInterval(currentProgressTimer), currentProgressTimer = null) }
+
+        function progressBarFunctionWrapper(a) { var b, c; return $jscomp.asyncExecutePromiseGeneratorProgram(function (d) { switch (d.nextAddress) { case 1: return (b = model_expected_runtime) || (b = 10), console.log("start progress bar"), currentlyRunningModel = !0, progressBar = document.getElementById("progressBar"), cancelProgressBar(), d.setCatchFinallyBlocks(2, 3), currentProgressTimer = window.setInterval(function () { currentProgressTime++; progressBar.style.width = 100 * Math.tanh(currentProgressTime / 60 / b) + "%" }, Math.round(1E3 / 60)), d.yield(a(), 5); case 5: return d.return(d.yieldResult); case 3: d.enterFinallyBlock(); console.log("end progress bar"); currentlyRunningModel = !1; cancelProgressBar(); d.leaveFinallyBlock(0); break; case 2: throw c = d.enterCatchBlock(), c; } }) } function geniusToggled() { var a = document.getElementById("genius"); a.hasAttribute("locked") && (openSubscription(), a.checked = !1) } function concatUint8Array(a, b) { var c = new Uint8Array(a.length + b.length); c.set(a); c.set(b, a.length); return c }
+        function Utf8ArrayToStr(a) { for (var b = "", c = a.length, d = 0; d < c;) { var e = a[d++]; if (0 === e >> 7) b += String.fromCharCode(e); else if (6 === e >> 5) { var h = a[d++]; b += String.fromCharCode((e & 31) << 6 | h & 63) } else if (14 === e >> 4) { h = a[d++]; var f = a[d++]; b += String.fromCharCode((e & 15) << 12 | (h & 63) << 6 | f & 63) } else if (30 === e >> 3) { h = a[d++]; f = a[d++]; var l = a[d++]; e = ((e & 7) << 18 | (h & 63) << 12 | (f & 63) << 6 | l & 63) - 65536; b += String.fromCharCode((e >> 10) + 55296, (e & 1023) + 56320) } } return b }
+
+        function copyChatPointer(a) { a = document.getElementById(a); console.log(a.id); return a.id } function getFullChatHistoryObject() { for (var a = Array.from(document.getElementsByClassName("chatbox")), b = Array.from(document.getElementsByClassName("outputBox")), c = [], d = 0; d < a.length; d++) { var e = a[d], h = b[d]; e && c.push({ role: "user", content: e.value }); h && (e = getTextFromDiv(h), c.push({ role: "assistant", content: e })) } return c } function getChatHistoryObject() { var a = getFullChatHistoryObject(); a.splice(0, a.length - 30); return a }
+
+        function textAreaKeyPressHandler(a) { 13 != a.keyCode || a.shiftKey || (a.preventDefault(), chatSubmit()) } function editedtextAreaKeyPressHandler(a) { 13 != a.keyCode || a.shiftKey || (a.preventDefault(), chatReSubmit()) } var abortController = null; function chatStop() { abortController.abort() } var copyButtonId = "copyButtonId_1", chatboxWrapperId = "chatboxWrapperId_1"; function chatSubmit() { var a, b, c, d, e, h, f, l, g, k, m, n, q, w, C, E, N, H, R, D, A, t, O, P, U, I, Y, da, la, ma, ea, Z, V, fa, ha, ia, J, ja, K, L, aa, Q, S, M, ka, y, ba, T, W; return $jscomp.asyncExecutePromiseGeneratorProgram(function (u) { switch (u.nextAddress) { case 1: try { saveChatHistory() } catch (p) { console.log("Error saving chat history before chatSubmit", p) } Array.from(document.getElementsByClassName("chatbox")).slice(-1); a = getChatHistoryObject(); b = new FormData; b.append("chat_style", chat_style); b.append("chatHistory", JSON.stringify(a)); c = document.getElementById("genius"); (d = c.checked) && b.append("model", "genius"); e = Math.round(1E11 * Math.random()) + ""; h = function () { for (var p = [], r = 0; 64 > r;)p[r] = 0 | 4294967296 * Math.sin(++r % Math.PI); return function (z) { var B, F, G, ca = [B = 1732584193, F = 4023233417, ~B, ~F], X = [], x = unescape(encodeURI(z)) + "\u0080", v = x.length; z = --v / 4 + 2 | 15; for (X[--z] = 8 * v; ~v;)X[v >> 2] |= x.charCodeAt(v) << 8 * v--; for (r = x = 0; r < z; r += 16) { for (v = ca; 64 > x; v = [G = v[3], B + ((G = v[0] + [B & F | ~B & G, G & B | ~G & F, B ^ F ^ G, F ^ (B | ~G)][v = x >> 4] + p[x] + ~~X[r | [x, 5 * x + 1, 3 * x + 5, 7 * x][v] & 15]) << (v = [7, 12, 17, 22, 5, 9, 14, 20, 4, 11, 16, 23, 6, 10, 15, 21][4 * v + x++ % 4]) | G >>> -v), B, F])B = v[1] | 0, F = v[2]; for (x = 4; x;)ca[--x] += v[x] } for (z = ""; 32 > x;)z += (ca[x >> 3] >> 4 * (1 ^ x++) & 15).toString(16); return z.split("").reverse().join("") } }(); f = "tryit-" + e + "-" + h(navigator.userAgent + h(navigator.userAgent + h(navigator.userAgent + e + "x"))); l = document.getElementById("chatSubmitButton"); g = document.getElementById("chatStopButton"); null !== document.getElementById("chatEditSubmitButton") && (document.getElementById("chatEditSubmitButton").disabled = !0, document.getElementById("chatEditSubmitButton").style = "background: #b5b5b5; color: #101010;"); null !== document.getElementById("chatRegenButton") && (document.getElementById("chatRegenButton").disabled = !0); u.setCatchFinallyBlocks(2); abortController = new AbortController; n = abortController.signal; q = $jscomp; w = q.makeIterator; return u.yield(progressBarFunctionWrapper(function () { var p, r; return $jscomp.asyncExecutePromiseGeneratorProgram(function (z) { if (1 == z.nextAddress) return g.style = "display: block;", l.style = "display: none;", z.yield(fetch(app_base_url + "/make_me_a_pizza", { credentials: "include", method: "POST", body: b, signal: n, headers: { "api-key": f } }), 2); p = z.yieldResult; r = p.body.getReader(); return z.return([r, p]) }) }), 4); case 4: C = w.call(q, u.yieldResult); k = C.next().value; m = C.next().value; u.leaveTryBlock(3); break; case 2: return E = u.enterCatchBlock(), console.log("Caught error in chat fetch", E), g.style = "display: none;", l.style = "display: block;", u.return(); case 3: if (!(299 < m.status)) { u.jumpTo(5); break } return u.yield(k.read(), 6); case 6: N = u.yieldResult; H = N.value; R = new TextDecoder("utf-8"); D = JSON.parse(R.decode(H)); if ("anonymous try it exceeded" === D.status) return openSignup(function () { }, "Sign Up to Keep Chatting!"), g.style = "display: none;", l.style = "display: block;", u.return(); if ("signed in try-it quota exceeded" === D.status || "model only available to paid users" === D.status) return openSubscription(), g.style = "display: none;", l.style = "display: block;", u.return(); if ("pro user out of credits" === D.status) return openOutOfCredits(D.credits_remaining), g.style = "display: none;", l.style = "display: block;", u.return(); g.style = "display: none;"; l.style = "display: block;"; throw Error("Unknown error"); case 5: A = document.createElement("div"), A.className = "optionsBox", A.contentEditable = "false", t = document.createElement("div"), t.className = "outputBox", O = document.querySelectorAll(".chatbox-wrapper, .editsBox"), P = O[O.length - 1], P.parentNode.insertBefore(t, P.nextSibling), t.innerText = "", U = new Uint8Array(0), I = "", u.setCatchFinallyBlocks(7); case 9: return u.yield(k.read(), 11); case 11: Y = u.yieldResult; da = Y.value; if (la = Y.done) { u.jumpTo(10); break } U = concatUint8Array(U, da); I = ma = Utf8ArrayToStr(U); I.includes("OpenAI") && (I = I.replaceAll("OpenAI", "DeepAI")); ea = I.substring(t.innerText.length, I.length); Z = ea.split(/(\s+)/); V = 0; case 12: if (!(V < Z.length)) { u.jumpTo(9); break } fa = Z[V]; ha = document.createTextNode(fa); t.appendChild(ha); return u.yield(new Promise(function (p) { return setTimeout(p, 10) }), 13); case 13: V++; u.jumpTo(12); break; case 10: console.log("Response fully received"); u.leaveTryBlock(8); break; case 7: ia = u.enterCatchBlock(), console.log("Error in reading chat response", ia); case 8: document.getElementById("chatRegenButton").disabled = !1; null !== document.getElementById("chatEditSubmitButton") && (document.getElementById("chatEditSubmitButton").disabled = !1, document.getElementById("chatEditSubmitButton").style = "background: #26A69A; color: white;"); l.style = "display: block;"; g.style = "display: none;"; try { saveChatHistory() } catch (p) { console.log("Error saving chat history after response is received", p) } J = document.createElement("button"); J.className = "copytextButton"; J.innerText = "Copy"; J.type = "button"; J.id = copyButtonId; J.onclick = function (p) { p = p.target.closest(".outputBox"); p = getTextFromDiv(p); navigator.clipboard.writeText(p); var r = document.getElementById("copypopup"); r.className = "show"; setTimeout(function () { r.className = r.className.replace("show", "") }, 3E3) }; copyButtonId = updateElementId(copyButtonId); ja = document.querySelectorAll(".summarizetextButton"); ja.forEach(function (p) { p.style = "display: none;" }); K = document.createElement("button"); K.className = "summarizetextButton"; K.innerText = "Summarize"; K.type = "button"; K.id = "sumButtonId"; K.onclick = function (p) { p = p.target.closest(".outputBox"); p = getTextFromDiv(p); summarizeSubmit("Summarize the following text: " + p); var r = document.getElementById("summarypopup"); r.className = "show"; setTimeout(function () { r.className = r.className.replace("show", "") }, 3E3) }; L = document.createElement("button"); L.className = "deleteBoxButton"; L.type = "button"; L.innerText = "Delete"; aa = function (p) { p = this.parentNode.parentNode; var r = p.nextSibling; null != r && "editsBox" == r.className && r.remove(); p.remove(); "outputBox" == p.className && 1 <= document.querySelectorAll(".outputBox").length && (Array.from(document.getElementsByClassName("outputBox")).slice(-1)[0].querySelector(".summarizetextButton").style = "display: flex;"); 2 > document.querySelectorAll(".chatbox").length && (document.getElementById("chatRegenButton").style = "display: none"); Array.from(document.getElementsByClassName("chatbox")).slice(-1)[0].focus() }; L.onclick = aa; A.appendChild(J); A.appendChild(K); A.appendChild(L); t.appendChild(A); A = document.createElement("div"); A.className = "chatoptionsBox"; A.contentEditable = "false"; Q = document.createElement("div"); Q.className = "chatbox-wrapper"; Q.id = chatboxWrapperId; S = {}; M = document.createElement("textarea"); M.className = "chatbox"; M.position = "relative"; M.rows = 10; M.cols = 50; Q.onkeypress = textAreaKeyPressHandler; Q.appendChild(M); O = document.querySelectorAll(".chatbox-wrapper, .outputBox, .editsBox"); P = O[O.length - 1]; P.parentNode.insertBefore(Q, P.nextSibling); ka = document.querySelectorAll(".chatbox-wrapper"); y = Array.from(ka).slice(-2)[0]; y.onkeypress = editedtextAreaKeyPressHandler; ba = L.cloneNode(!0); ba.onclick = aa; A.appendChild(ba); 1 === y.children.length && y.appendChild(A); M.focus(); W = T = !1; getNextSiblings(y, W); y.addEventListener("click", function () { S[y.id] = y.children[0].value }); y.addEventListener("input", function () { W = !0; if (!1 === T) { var p = document.createElement("div"); p.className = "editsBox"; var r = document.createElement("button"); r.id = "chatEditSubmitButton"; r.innerText = "Save & Go"; r.onclick = function () { var B = getNextSiblings(y, W); p.remove(); delete S[y.id]; editSubmitCallback(B); T = !1 }; var z = document.createElement("button"); z.id = "chatEditCancelButton"; z.innerText = "Cancel"; z.onclick = function () { p.remove(); var B = S[y.id]; delete S[y.id]; y.children[0].value = B; T = !1 }; "outputBox" == y.nextSibling.className && (p.appendChild(r), p.appendChild(z), y.parentNode.insertBefore(p, y.nextSibling)); T = !0 } }); chatboxWrapperId = updateElementId(chatboxWrapperId); document.getElementById("chatRegenButton").style = "display: flex"; try { freestar.refresh() } catch (p) { console.log("error refreshing freestar", p) } u.jumpToEnd() } }) } try { var chatbox_text = sessionStorage.getItem("homepage_chatbox_text"); if (chatbox_text) { sessionStorage.removeItem("homepage_chatbox_text"); var chatbox = Array.from(document.getElementsByClassName("chatbox-wrapper")).slice(-1)[0]; chatbox.children[0].value = chatbox_text; chatbox.scrollIntoView(); chatSubmit() } } catch (a) { console.log("error getting chatbox_text from sessionStorage", a) }
+
+        function summarizeSubmit(a) { try { var b = Array.from(document.getElementsByClassName("chatbox-wrapper")).slice(-1)[0]; b.children[0].value = a; b.scrollIntoView(); chatSubmit() } catch (c) { console.log("error getting text for summarization", c) } } function getNextSiblings(a, b) { for (var c = []; a = a.nextSibling;)3 !== a.nodeType && (b && ("outputBox" == a.className || "chatbox-wrapper" == a.className || "editsBox" == a.className) && c.push(a), "outputBox" != a.className && "chatbox-wrapper" != a.className || c.push(a)); return c }
+        function editSubmitCallback(a) { a.forEach(function (b) { b.remove() }); chatSubmit() } function chatReSubmit() { var a = Array.from(document.querySelectorAll(".chatbox-wrapper")).slice(-2)[0]; getNextSiblings(a, !1).forEach(function (b) { b.remove() }); chatSubmit() } function replaceAll(a, b) { return Object.keys(b).reduce(function (c, d, e) { return ("" + c).replace(new RegExp(d, "ig"), b[d]) }, a) } function updateElementId(a) { var b = a.slice(0, a.indexOf("_")); a = parseInt(a.slice(a.indexOf("_") + 1)); return b + "_" + (a + 1).toString() }
+        function getTextFromDiv(a) { for (var b = "", c = 0; c < a.childNodes.length; c++) { var d = a.childNodes[c]; d.nodeType === Node.TEXT_NODE && (b += d.textContent) } return b } function showInfoOptions(a) { a = "chatInfoIdeaButton" === a ? document.getElementById("idea-info-list") : "chatInfoStrengthButton" === a ? document.getElementById("str-info-list") : document.getElementById("weak-info-list"); "none" === a.style.display ? (a.style.display = "flex", a.style.margin = "0px 10px 0px 20px") : a.style.display = "none" }
+        function uuidv4() { for (var a = [], b = 0; 36 > b; b++)a[b] = "0123456789abcdef".substr(Math.floor(16 * Math.random()), 1); a[14] = "4"; a[19] = "0123456789abcdef".substr(a[19] & 3 | 8, 1); a[8] = a[13] = a[18] = a[23] = "-"; return a.join("") } var currentChatUUID = uuidv4(); function saveChatHistory() { var a, b, c, d, e; return $jscomp.asyncExecutePromiseGeneratorProgram(function (h) { if (1 == h.nextAddress) return a = getFullChatHistoryObject(), b = currentChatUUID, c = new FormData, c.append("uuid", b), c.append("title", ""), c.append("chat_style", chat_style), c.append("messages", JSON.stringify(a)), h.yield(fetch(app_base_url + "/save_chat_session", { credentials: "include", method: "POST", body: c }), 2); if (3 != h.nextAddress) return d = h.yieldResult, h.yield(d.json(), 3); e = h.yieldResult; console.log("saveChatHistory response", e); try { saveSessionUUIDToLocalStorage(currentChatUUID) } catch (f) { console.log("error saving session uuid to localStorage", f) } h.jumpToEnd() }) } function getChatHistory(a) { var b, c; return $jscomp.asyncExecutePromiseGeneratorProgram(function (d) { if (1 == d.nextAddress) return d.yield(fetch(app_base_url + "/get_chat_session?uuid=" + a, { credentials: "include", method: "GET" }), 2); if (3 != d.nextAddress) return b = d.yieldResult, d.yield(b.json(), 3); c = d.yieldResult; console.log("getChatHistory response", c); return d.return(c) }) }
+        function deleteChatHistoryEntry() { var a, b, c, d; return $jscomp.asyncExecutePromiseGeneratorProgram(function (e) { if (1 == e.nextAddress) return a = currentChatUUID, b = new FormData, b.append("uuid", a), confirm("Please confirm, if you want to delete this chat. \n Choose OK or Cancel."), e.yield(fetch(app_base_url + "/delete_chat_session", { credentials: "include", method: "POST", body: b }), 2); if (3 != e.nextAddress) return c = e.yieldResult, e.yield(c.json(), 3); d = e.yieldResult; console.log("deleteChatHistoryEntry response", d); window.location.reload(); e.jumpToEnd() }) }
+        function renameChatHistoryEntry() { var a, b, c, d, e; return $jscomp.asyncExecutePromiseGeneratorProgram(function (h) { if (1 == h.nextAddress) return a = currentChatUUID, b = document.getElementById("new-chat-title").value, c = new FormData, c.append("uuid", a), c.append("title", b), h.yield(fetch(app_base_url + "/rename_chat_session", { credentials: "include", method: "POST", body: c }), 2); if (3 != h.nextAddress) return d = h.yieldResult, h.yield(d.json(), 3); e = h.yieldResult; console.log("renameChatHistoryEntry response", e); window.location.reload(); h.jumpToEnd() }) } function clearChat() { chatboxWrapperId = "chatboxWrapperId_1"; copyButtonId = "copyButtonId_1"; Array.from(document.querySelectorAll(".chatbox-wrapper")).forEach(function (a) { a.remove() }); Array.from(document.querySelectorAll(".outputBox")).forEach(function (a) { a.remove() }) } function showChatHistoryEditing() { document.getElementById("history-rename").scrollIntoView() }
+        function displayChatHistory(a) { clearChat(); for (var b = function (g, k, m) { var n = document.createElement("button"); n.className = g; n.type = "button"; n.innerText = k; n.onclick = m; return n }, c = function (g) { g = g.target.closest(".outputBox") || g.target.closest(".chatbox-wrapper"); var k = g.nextSibling; "editsBox" == (null == k ? void 0 : k.className) && k.remove(); g.remove(); if (g = Array.from(document.getElementsByClassName("outputBox")).slice(-1)[0]) g.querySelector(".summarizetextButton").style = "display: flex;"; 2 > document.querySelectorAll(".chatbox").length && (document.getElementById("chatRegenButton").style = "display: none"); Array.from(document.getElementsByClassName("chatbox")).slice(-1)[0].focus() }, d = document.getElementById("progressContainer"), e = $jscomp.makeIterator(a.messages), h = e.next(); !h.done; h = e.next()) { h = h.value; var f = void 0; if ("user" === h.role) { f = document.createElement("div"); f.className = "chatbox-wrapper"; var l = document.createElement("textarea"); l.className = "chatbox"; l.position = "relative"; l.rows = 10; l.cols = 50; l.value = h.content; f.appendChild(l); l = document.createElement("div"); l.className = "chatoptionsBox"; l.contentEditable = "false"; l.appendChild(b("deleteBoxButton", "Delete", c)); h !== a.messages[a.messages.length - 1] && f.appendChild(l); f.onkeypress = textAreaKeyPressHandler } else if ("assistant" === h.role) f = document.createElement("div"), f.className = "outputBox", f.textContent = h.content, h = document.createElement("div"), h.className = "optionsBox", h.contentEditable = "false", h.appendChild(b("copytextButton", "Copy", function (g) { g = g.target.closest(".outputBox").innerText; g = replaceAll(g, { Copy: "", Delete: "", Summarize: "" }).replace(/[\r\n]+$/, ""); navigator.clipboard.writeText(g); var k = document.getElementById("copypopup"); k.className = "show"; setTimeout(function () { return k.className = k.className.replace("show", "") }, 3E3) })), h.appendChild(b("deleteBoxButton", "Delete", c)), f.appendChild(h); else { console.log("unknown message role", h.role); continue } d.insertAdjacentElement("afterEnd", f); d = f } }
+        function saveSessionUUIDToLocalStorage(a) { var b = localStorage.getItem("chatSessionUUIDs"); if (null === b) b = []; else try { b = JSON.parse(b) } catch (c) { console.log("error parsing existingUUIDs", c), b = [] } b.push(a); b = [].concat($jscomp.arrayFromIterable(new Set(b))); localStorage.setItem("chatSessionUUIDs", JSON.stringify(b)) }
+        function getChatSessionUUIDsFromLocalStorage() { var a = localStorage.getItem("chatSessionUUIDs"); if (null === a) a = []; else try { a = JSON.parse(a) } catch (b) { console.log("error parsing existingUUIDs", b), a = [] } return a }
+        function getMyChatSessionsAndConvertAnonymousSessions() { var a, b, c, d; return $jscomp.asyncExecutePromiseGeneratorProgram(function (e) { if (1 == e.nextAddress) return a = getChatSessionUUIDsFromLocalStorage(), b = new FormData, b.append("my_known_uuids", JSON.stringify(a)), e.yield(fetch(app_base_url + "/get_my_chat_sessions_and_convert_anonymous_sessions", { credentials: "include", method: "POST", body: b }), 2); if (3 != e.nextAddress) return c = e.yieldResult, e.yield(c.json(), 3); d = e.yieldResult; console.log("getMyChatSessionsAndConvertAnonymousSessions response", d); return e.return(d) }) }
+
+        function displayMyChatSessions() { var a, b, c, d, e; return $jscomp.asyncExecutePromiseGeneratorProgram(function (h) { if (1 == h.nextAddress) return h.yield(getMyChatSessionsAndConvertAnonymousSessions(), 2); a = h.yieldResult.sessions; b = document.getElementById("chat-dropdown-box-id"); c = document.getElementById("chatSessionEditing"); for (d = document.getElementById("history-editing"); b.firstChild;)b.removeChild(b.firstChild); e = document.createElement("option"); 
+        e.innerText = "Chat History"; 
+        e.session_uuid = null; b.appendChild(e);
+         0 == a.length ? (b.style = "display: none;", c.style = "display: none;", d.style = "display: none;") : (b.style = "display: block;", c.style = "display: block;", d.style = "display: flex;", a.forEach(function (f) { console.log(f); var l = document.createElement("option"); l.innerText = f.title; l.session_uuid = f.uuid; b.appendChild(l) }), b.onchange = function () { document.activeElement.blur(); progressBarFunctionWrapper(function () { var f, l, g; return $jscomp.asyncExecutePromiseGeneratorProgram(function (k) { if (1 == k.nextAddress) { f = b.options[b.selectedIndex]; if (null === f.session_uuid) return k.return(); clearChat(); l = f.session_uuid; return k.yield(getChatHistory(l), 2) } g = k.yieldResult; currentChatUUID = l; displayChatHistory(g); k.jumpToEnd() }) }) }); h.jumpToEnd() }) } try { displayMyChatSessions() } catch (a) { console.log("error displaying my chat sessions", a) };;</script>
+
+
+</body>
+
+</html>

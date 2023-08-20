@@ -2,6 +2,7 @@ package chat.gpt.chatgpt_desktop.Controller;
 
 import chat.gpt.chatgpt_desktop.view.WindowLoader;
 import com.jfoenix.controls.JFXToggleButton;
+import javafx.concurrent.Worker;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -39,16 +40,33 @@ public class MiniProgrammingController implements Initializable {
 
         //load the deep AI chat site as our primary chat agent
         webEngine.load("https://deepai.org/chat");
+        //scroll to 600 px and attempt to block ads
+        webEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == Worker.State.SUCCEEDED) {
+                webEngine.executeScript(
+                        "window.scrollTo(0, 600);" +
+//                                "var iframes = document.querySelectorAll('iframe'); " +
+//                                "for (var i = 0; i < iframes.length; i++) { " +
+//                                "    iframes[i].setAttribute('hidden', 'true'); " +
+//                                "}" +
+                                " //add sentry JS:\n" +
+                                "  console.log('adding sentry JS');\n" +
+                                "  var sentryScript = document.createElement('script');\n" +
+                                "  sentryScript.src = 'https://browser.sentry-cdn.com/7.19.0/bundle.min.js';\n" +
+                                "  sentryScript.crossorigin = \"anonymous\";\n" +
+                                "  sentryScript.onload = \"Sentry.init{ dsn: 'https://97bfbb7bc651472085dab062d23194f6@sentry.io/1460722' });\";\n" +
+                                "  sentryScript.async = true;\n" +
+                                "  document.head.appendChild(sentryScript);\n" +
+                                "  console.log('added sentry JS');"
+                );
+            }
+        });
     }
 
     //keeps the window on top as I browse other apps
     public void toggleAlwaysOnTop() {
         Stage stage=(Stage) toggle.getScene().getWindow();
-        if (stage.isAlwaysOnTop()) {
-            stage.setAlwaysOnTop(false);
-        } else {
-            stage.setAlwaysOnTop(true);
-        }
+        stage.setAlwaysOnTop(!stage.isAlwaysOnTop());
         
     }
 

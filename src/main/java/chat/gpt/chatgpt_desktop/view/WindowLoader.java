@@ -20,14 +20,10 @@ public class WindowLoader {
             stage.getIcons().add(new Image(String.valueOf(WindowLoader.class.getResource("/chat/gpt/chatgpt_desktop/icons/logo.png"))));
             stage.setTitle("AssistantGPT");
             scene.setOnKeyPressed(e -> {
-                if (e.isControlDown() && e.getCode() == KeyCode.D) {
+                if (e.isControlDown() && e.getCode()== KeyCode.D ) {
                     stage.hide();
                     appStage = stage;
                     new DevWindowLoader().loadWindowFromPassedFxmlPath("MiniProgramming");
-                }else if (e.isControlDown() && e.getCode() == KeyCode.E) {
-                        stage.hide();
-                        appStage = stage;
-                        new DevWindowLoader().loadWindowFromPassedFxmlPath("MiniProgrammingEdge");
                 }
             });
             if (path.equals("Home")){

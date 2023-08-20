@@ -7,6 +7,7 @@ import chat.gpt.chatgpt_desktop.view.PromptWindowLoader;
 import chat.gpt.chatgpt_desktop.view.WindowLoader;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import javafx.concurrent.Worker;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,6 +23,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,6 +57,9 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //load the saved prompts
+        loadPrompts();
+
         // Load the image for info button icon
         Image iconImage = new Image(String.valueOf(getClass().getResource("/chat/gpt/chatgpt_desktop/icons/info.png")));
 
@@ -63,7 +68,7 @@ public class HomeController implements Initializable {
         iconImageView.setFitWidth(31);
         iconImageView.setFitHeight(31);
         // Create a button and set the image as its graphic
-        popInfo.setGraphic(iconImageView);
+//        popInfo.setGraphic(iconImageView);
 
         //initialize the webview browser with our chat window set
         WebEngine webEngine = webView.getEngine();
@@ -71,31 +76,25 @@ public class HomeController implements Initializable {
         // Set the user agent to mimic Firefox
         String userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3";
         webView.getEngine().setUserAgent(userAgent);
-        webEngine.setOnAlert(Event::consume);
         webView.setContextMenuEnabled(true);
+
 
         //load the deep AI chat site as our primary chat agent
         webEngine.load("https://deepai.org/chat");
-        webView.setContextMenuEnabled(false);
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem copyMenuItem = new MenuItem("Copy");
-        copyMenuItem.setOnAction(event -> copySelectedText(webView));
-        contextMenu.getItems().addAll(copyMenuItem);
-        loadPrompts();
-
-    }
-
-    //copy selected text from WebView
-    private void copySelectedText(WebView webView) {
-        String selectedText = (String) webView.getEngine().executeScript("window.getSelection().toString()");
-
-        if (!selectedText.isEmpty()) {
-            Clipboard clipboard = Clipboard.getSystemClipboard();
-            ClipboardContent content = new ClipboardContent();
-            content.putString(selectedText);
-            clipboard.setContent(content);
-        }
+        webEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == Worker.State.SUCCEEDED) {
+                webEngine.executeScript(
+                        "window.scrollTo(0, 600);" +
+                                "var iframes = document.querySelectorAll('iframe'); " +
+                                "for (var i = 0; i < iframes.length; i++) { " +
+                                "    iframes[i].style.display = 'none'; " +
+                                "    iframes[i].style.opacity = '0'; " +
+                                "    iframes[i].setAttribute('sandbox', ''); " +
+                                "}"
+                );
+            }
+        });
     }
 
     /**populate the prompts list with saved prompts onLoad**/
